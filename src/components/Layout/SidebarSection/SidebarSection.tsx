@@ -1,4 +1,3 @@
-import type { ListProps } from "@mui/material";
 import { List } from "@mui/material";
 import type { ReactNode } from "react";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
@@ -13,9 +12,8 @@ interface Item {
 	title: string;
 }
 
-interface SidebarSectionProps extends ListProps {
+interface SidebarSectionProps {
 	items: Item[];
-	path?: string;
 	title: string;
 }
 
@@ -87,23 +85,16 @@ const reduceChildRoutes = ({
 	return acc;
 };
 
-export const SidebarSection = ({
-	items,
-	path,
-	title,
-	...other
-}: SidebarSectionProps) => (
-	<List
+export const SidebarSection = ({ items, title }: SidebarSectionProps) => (
+	<Styles.List
 		subheader={
 			<Styles.ListSubheader disableGutters disableSticky>
 				{title}
 			</Styles.ListSubheader>
 		}
-		{...other}
 	>
 		{renderNavItems({
 			items,
-			path,
 		})}
-	</List>
+	</Styles.List>
 );

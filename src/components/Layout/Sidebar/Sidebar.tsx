@@ -3,6 +3,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import type { Theme } from "@mui/material";
 import { Drawer, useMediaQuery } from "@mui/material";
+import { SidebarSection } from "../SidebarSection";
 import * as Styles from "./Sidebar.styles";
 
 interface SidebarProps {
@@ -44,16 +45,7 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 				<Styles.Logo />
 			</Styles.LogoBox>
 			{sections.map((section) => (
-				<Styles.SidebarSection
-					key={section.title}
-					sx={{
-						mt: 2,
-						"& + &": {
-							mt: 2,
-						},
-					}}
-					{...section}
-				/>
+				<SidebarSection key={section.title} {...section} />
 			))}
 		</>
 	);
