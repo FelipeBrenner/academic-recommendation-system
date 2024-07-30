@@ -1,0 +1,35 @@
+{
+	"name": "academic-recommendation-system",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.13.0",
+		"@emotion/styled": "^11.13.0",
+		"@mui/icons-material": "^5.16.4",
+		"@mui/lab": "5.0.0-alpha.172",
+		"@mui/material": "^5.16.4",
+		"@mui/system": "^5.16.5",
+		"@remix-run/router": "^1.18.0",
+		"firebase": "^10.12.4",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-hot-toast": "^2.4.1",
+		"react-router-dom": "^6.25.1",
+		"simplebar-react": "^3.2.6",
+		"vite-tsconfig-paths": "^4.3.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"typescript": "^5.2.2",
+		"vite": "^5.3.4"
+	}
+}
