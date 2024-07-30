@@ -1,4 +1,3 @@
-import { Scrollbar } from "@components";
 import { pathRoutes } from "@constants";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
@@ -40,14 +39,7 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 	});
 
 	const content = (
-		<Scrollbar
-			sx={{
-				height: "100%",
-				"& .simplebar-content": {
-					height: "100%",
-				},
-			}}
-		>
+		<>
 			<Styles.LogoBox>
 				<Styles.Logo />
 			</Styles.LogoBox>
@@ -63,7 +55,7 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 					{...section}
 				/>
 			))}
-		</Scrollbar>
+		</>
 	);
 
 	if (lgUp) {
