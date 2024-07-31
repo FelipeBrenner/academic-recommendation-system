@@ -21,11 +21,11 @@ export const ParentButton: StyledComponent<CustomizedButtonProps> = styled(
 	borderRadius: theme.shape.borderRadius,
 	color: theme.palette.neutral?.[300],
 	...(active && {
-		color: theme.palette.secondary.main,
+		color: theme.palette.primary.main,
 		fontWeight: "bold",
 	}),
 	"& .MuiButton-startIcon": {
-		color: active ? theme.palette.secondary.main : theme.palette.neutral?.[400],
+		color: active ? theme.palette.primary.main : theme.palette.neutral?.[400],
 	},
 	"&:hover": {
 		backgroundColor: theme.palette.action.hover,

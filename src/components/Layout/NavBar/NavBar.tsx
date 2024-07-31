@@ -1,4 +1,4 @@
-import { ThemeButton } from "@components";
+import { ThemeButton, UsersButton } from "@components";
 import { sidebarWidth } from "@constants";
 import { useAuth } from "@contexts";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -71,6 +71,7 @@ export const Navbar = ({ onOpenSidebar, ...other }: NavbarProps) => (
 			</IconButton>
 			<Styles.FlexGrowBox />
 			<ThemeButton />
+			<UsersButton />
 			<AccountButton />
 		</Styles.Toolbar>
 	</Styles.AppBar>

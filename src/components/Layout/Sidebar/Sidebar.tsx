@@ -56,7 +56,8 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 			sx: {
 				width: sidebarWidth,
 				boxShadow: 3,
-				borderRightWidth: 0,
+				borderBottomWidth: 1,
+				borderBottomStyle: "solid",
 			},
 		},
 	};

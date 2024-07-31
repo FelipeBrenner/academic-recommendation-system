@@ -1,7 +1,7 @@
 import { useSettings } from "@contexts";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 
 export const ThemeButton = () => {
 	const { settings, setSettings } = useSettings();
@@ -14,12 +14,14 @@ export const ThemeButton = () => {
 	};
 
 	return (
-		<IconButton onClick={handleChange}>
-			{settings.theme === "dark" ? (
-				<DarkModeIcon fontSize="small" />
-			) : (
-				<LightModeIcon fontSize="small" />
-			)}
-		</IconButton>
+		<Tooltip title="Tema">
+			<IconButton onClick={handleChange}>
+				{settings.theme === "dark" ? (
+					<DarkModeIcon fontSize="small" />
+				) : (
+					<LightModeIcon fontSize="small" />
+				)}
+			</IconButton>
+		</Tooltip>
 	);
 };

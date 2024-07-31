@@ -10,7 +10,9 @@ import {
 export const AppBar = styled(MuiAppBar)(({ theme }) => ({
 	backgroundColor: theme.palette.background.paper,
 	boxShadow: theme.shadows[3],
-	borderBottomWidth: 0,
+	borderBottomWidth: 1,
+	borderBottomColor: theme.palette.divider,
+	borderBottomStyle: "solid",
 }));
 
 export const Toolbar = styled(MuiToolbar)(({ theme }) => ({
