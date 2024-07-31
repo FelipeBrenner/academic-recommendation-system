@@ -1,4 +1,5 @@
 import { ThemeButton } from "@components";
+import { sidebarWidth } from "@constants";
 import { useAuth } from "@contexts";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ButtonBase, IconButton, type AppBarProps } from "@mui/material";
@@ -48,10 +49,10 @@ export const Navbar = ({ onOpenSidebar, ...other }: NavbarProps) => (
 	<Styles.AppBar
 		sx={{
 			left: {
-				lg: 280,
+				lg: sidebarWidth,
 			},
 			width: {
-				lg: "calc(100% - 280px)",
+				lg: `calc(100% - ${sidebarWidth}px)`,
 			},
 		}}
 		{...other}

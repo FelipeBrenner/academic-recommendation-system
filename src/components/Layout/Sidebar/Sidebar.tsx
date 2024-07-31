@@ -1,7 +1,7 @@
-import { pathRoutes } from "@constants";
+import { pathRoutes, sidebarWidth } from "@constants";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
-import type { Theme } from "@mui/material";
+import type { DrawerProps, Theme } from "@mui/material";
 import { Drawer, useMediaQuery } from "@mui/material";
 import { SidebarSection } from "../SidebarSection";
 import * as Styles from "./Sidebar.styles";
@@ -50,18 +50,20 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 		</>
 	);
 
+	const defaultDrawerProps: DrawerProps = {
+		anchor: "left",
+		PaperProps: {
+			sx: {
+				width: sidebarWidth,
+				boxShadow: 3,
+				borderRightWidth: 0,
+			},
+		},
+	};
+
 	if (lgUp) {
 		return (
-			<Drawer
-				anchor="left"
-				open
-				PaperProps={{
-					sx: {
-						width: 280,
-					},
-				}}
-				variant="permanent"
-			>
+			<Drawer variant="permanent" open {...defaultDrawerProps}>
 				{content}
 			</Drawer>
 		);
@@ -69,16 +71,11 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 
 	return (
 		<Drawer
-			anchor="left"
-			onClose={onClose}
-			open={open}
-			PaperProps={{
-				sx: {
-					width: 280,
-				},
-			}}
-			sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
 			variant="temporary"
+			open={open}
+			onClose={onClose}
+			sx={{ zIndex: (theme) => theme.zIndex.appBar + 100 }}
+			{...defaultDrawerProps}
 		>
 			{content}
 		</Drawer>

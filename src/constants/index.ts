@@ -10,3 +10,5 @@ export const localStorageKeys = {
 	email: `${systemName}-email`,
 	settings: `${systemName}-settings`,
 };
+
+export const sidebarWidth = 240;
