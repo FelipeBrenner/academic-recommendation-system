@@ -4,6 +4,7 @@ import { routers } from "@routers";
 import { createTheme } from "@themes";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 
 ReactDOM.createRoot(
@@ -15,6 +16,7 @@ ReactDOM.createRoot(
 				{({ settings }) => (
 					<ThemeProvider theme={createTheme({ mode: settings.theme })}>
 						<CssBaseline />
+						<Toaster position="top-center" />
 						<AuthProvider>
 							<RouterProvider router={routers} />
 						</AuthProvider>

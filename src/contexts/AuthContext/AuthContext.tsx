@@ -136,12 +136,12 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
 
 					const { name, avatar } = newUser;
 
-					updateProfile(auth.currentUser, {
+					await updateProfile(auth.currentUser, {
 						displayName: name,
 						photoURL: avatar,
 					});
 
-					usersDatabase.updateUser(updatedUser);
+					await usersDatabase.updateUser(updatedUser);
 				} catch (error) {
 					console.error(error);
 				}
