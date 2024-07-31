@@ -8,4 +8,5 @@ const systemName = "acad-rec-sys";
 
 export const localStorageKeys = {
 	email: `${systemName}-email`,
+	settings: `${systemName}-settings`,
 };

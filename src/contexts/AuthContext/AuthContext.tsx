@@ -9,6 +9,7 @@ import {
 	onAuthStateChanged,
 	signInWithPopup,
 	signOut,
+	updateProfile,
 	type Auth,
 } from "firebase/auth";
 import {
@@ -32,6 +33,7 @@ interface IAuthContext {
 	isLoadingGoogleSignIn: boolean;
 	isLoadingGitHubSignIn: boolean;
 	user: IUser | null;
+	updateUser: (user: Partial<IUser>) => Promise<void>;
 }
 
 const AuthContext = createContext<IAuthContext>({
@@ -44,6 +46,7 @@ const AuthContext = createContext<IAuthContext>({
 	isLoadingGoogleSignIn: false,
 	isLoadingGitHubSignIn: false,
 	user: null,
+	updateUser: async () => {},
 });
 
 interface IAuthProvider {
@@ -61,7 +64,6 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
 		() =>
 			onAuthStateChanged(auth, async (user) => {
 				if (user) {
-					console.log(user);
 					setIsAuthenticated(true);
 					const dbUser = await usersDatabase.getUser(user.uid);
 
@@ -121,6 +123,33 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
 		await signOut(auth);
 	}, []);
 
+	const updateUser = useCallback(
+		async (newUser: Partial<IUser>) => {
+			if (auth.currentUser && user) {
+				try {
+					const updatedUser = {
+						...user,
+						...newUser,
+					};
+
+					setUser(updatedUser);
+
+					const { name, avatar } = newUser;
+
+					updateProfile(auth.currentUser, {
+						displayName: name,
+						photoURL: avatar,
+					});
+
+					usersDatabase.updateUser(updatedUser);
+				} catch (error) {
+					console.error(error);
+				}
+			}
+		},
+		[user],
+	);
+
 	const value = useMemo(
 		() => ({
 			auth,
@@ -132,6 +161,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
 			isLoadingGoogleSignIn,
 			isLoadingGitHubSignIn,
 			user,
+			updateUser,
 		}),
 		[
 			isAuthenticated,
@@ -142,6 +172,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
 			isLoadingGoogleSignIn,
 			isLoadingGitHubSignIn,
 			user,
+			updateUser,
 		],
 	);
 

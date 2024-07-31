@@ -150,10 +150,6 @@ export const baseThemeOptions: ThemeOptions = {
 		},
 		MuiIconButton: {
 			styleOverrides: {
-				root: {
-					borderRadius: 8,
-					padding: 8,
-				},
 				sizeSmall: {
 					padding: 4,
 				},

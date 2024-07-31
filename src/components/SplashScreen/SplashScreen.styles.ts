@@ -3,18 +3,18 @@ import { keyframes } from "@emotion/react";
 import { Box, styled } from "@mui/material";
 
 export const Container = styled(Box)(({ theme }) => ({
-  alignItems: "center",
-  backgroundColor: theme.palette.neutral?.[900],
-  display: "flex",
-  flexDirection: "column",
-  height: "100vh",
-  justifyContent: "center",
-  left: 0,
-  padding: theme.spacing(3),
-  position: "fixed",
-  top: 0,
-  width: "100vw",
-  zIndex: 2000,
+	alignItems: "center",
+	backgroundColor: theme.palette.background.default,
+	display: "flex",
+	flexDirection: "column",
+	height: "100vh",
+	justifyContent: "center",
+	left: 0,
+	padding: theme.spacing(3),
+	position: "fixed",
+	top: 0,
+	width: "100vw",
+	zIndex: 2000,
 }));
 
 const bounce = keyframes`
@@ -30,7 +30,7 @@ const bounce = keyframes`
 `;
 
 export const Logo = styled(LogoComponent)(({ theme }) => ({
-  height: theme.spacing(10),
-  width: theme.spacing(10),
-  animation: `${bounce} 1s ease-in-out infinite`,
+	height: theme.spacing(10),
+	width: theme.spacing(10),
+	animation: `${bounce} 1s ease-in-out infinite`,
 }));

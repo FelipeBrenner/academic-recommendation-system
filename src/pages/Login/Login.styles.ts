@@ -44,6 +44,9 @@ export const GitHubButton = styled(PlatformButton)(({ theme }) => ({
 	color: theme.palette.common.white,
 	"&:hover, &:disabled": {
 		backgroundColor: theme.palette.neutral?.[700],
+		"& > span": {
+			color: theme.palette.neutral?.[100],
+		},
 	},
 }));
 

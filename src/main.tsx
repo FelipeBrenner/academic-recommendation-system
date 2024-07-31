@@ -1,4 +1,4 @@
-import { AuthProvider } from "@contexts";
+import { AuthProvider, SettingsConsumer, SettingsProvider } from "@contexts";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { routers } from "@routers";
 import { createTheme } from "@themes";
@@ -10,11 +10,17 @@ ReactDOM.createRoot(
 	document.getElementById("root") as ReactDOM.Container,
 ).render(
 	<React.StrictMode>
-		<ThemeProvider theme={createTheme()}>
-			<CssBaseline />
-			<AuthProvider>
-				<RouterProvider router={routers} />
-			</AuthProvider>
-		</ThemeProvider>
+		<SettingsProvider>
+			<SettingsConsumer>
+				{({ settings }) => (
+					<ThemeProvider theme={createTheme({ mode: settings.theme })}>
+						<CssBaseline />
+						<AuthProvider>
+							<RouterProvider router={routers} />
+						</AuthProvider>
+					</ThemeProvider>
+				)}
+			</SettingsConsumer>
+		</SettingsProvider>
 	</React.StrictMode>,
 );

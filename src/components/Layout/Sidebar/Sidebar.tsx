@@ -57,12 +57,6 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 				open
 				PaperProps={{
 					sx: {
-						backgroundColor: "neutral.900",
-						borderRightColor: "divider",
-						borderRightStyle: "solid",
-						borderRightWidth: (theme) =>
-							theme.palette.mode === "dark" ? 1 : 0,
-						color: "#FFFFFF",
 						width: 280,
 					},
 				}}
@@ -80,8 +74,6 @@ export const Sidebar = ({ onClose, open }: SidebarProps) => {
 			open={open}
 			PaperProps={{
 				sx: {
-					backgroundColor: "neutral.900",
-					color: "#FFFFFF",
 					width: 280,
 				},
 			}}
