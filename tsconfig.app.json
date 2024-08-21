@@ -26,6 +26,7 @@
 		/* My Settings */
 		"baseUrl": "src",
 		"paths": {
+			"@api": ["api/index.ts"],
 			"@components": ["components/index.ts"],
 			"@constants": ["constants/index.ts"],
 			"@contexts": ["contexts/index.ts"],

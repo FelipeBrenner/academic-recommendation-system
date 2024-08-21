@@ -1,4 +1,9 @@
-import { AuthProvider, SettingsConsumer, SettingsProvider } from "@contexts";
+import {
+	AuthProvider,
+	QueryClientProvider,
+	SettingsConsumer,
+	SettingsProvider,
+} from "@contexts";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { routers } from "@routers";
 import { createTheme } from "@themes";
@@ -17,9 +22,11 @@ ReactDOM.createRoot(
 					<ThemeProvider theme={createTheme({ mode: settings.theme })}>
 						<CssBaseline />
 						<Toaster position="top-center" />
-						<AuthProvider>
-							<RouterProvider router={routers} />
-						</AuthProvider>
+						<QueryClientProvider>
+							<AuthProvider>
+								<RouterProvider router={routers} />
+							</AuthProvider>
+						</QueryClientProvider>
 					</ThemeProvider>
 				)}
 			</SettingsConsumer>

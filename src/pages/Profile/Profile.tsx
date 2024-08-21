@@ -7,7 +7,7 @@ const tabs = [
 	{ label: "Geral", value: "general" },
 	{
 		label: "Histórico Acadêmico",
-		value: "transcript-academic",
+		value: "academic-transcript",
 	},
 ];
 

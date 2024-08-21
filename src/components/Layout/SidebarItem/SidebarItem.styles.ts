@@ -19,7 +19,7 @@ export const ParentButton: StyledComponent<CustomizedButtonProps> = styled(
 	textTransform: "none",
 	width: "100%",
 	borderRadius: theme.shape.borderRadius,
-	color: theme.palette.neutral?.[300],
+	color: theme.palette.text.secondary,
 	...(active && {
 		backgroundColor: theme.palette.action.selected,
 		fontWeight: "bold",
