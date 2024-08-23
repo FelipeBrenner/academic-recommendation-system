@@ -1,6 +1,7 @@
 import { useGetTest } from "@api";
+import { Pomodoro } from "@components";
 import { LoadingButton } from "@mui/lab";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { useState } from "react";
 import * as Styles from "./Home.styles";
 
@@ -14,17 +15,28 @@ export const Home = () => {
 
 	return (
 		<Container>
-			<Styles.Title variant="h4">Home</Styles.Title>
-			<LoadingButton loading={isFetching} color="inherit" onClick={handleClick}>
-				Clique para rodar a api do GPT
-			</LoadingButton>
-			<Styles.Input
-				multiline
-				value={text}
-				onChange={(event) => setText(event.target.value)}
-				label="Input para o GPT"
-			/>
-			<Styles.Text variant="body2">Resposta do GPT: {data}</Styles.Text>
+			<Grid container spacing={3}>
+				<Grid item sm={12} md={8}>
+					<Styles.Title variant="h4">Home</Styles.Title>
+					<LoadingButton
+						loading={isFetching}
+						color="inherit"
+						onClick={handleClick}
+					>
+						Clique para rodar a api do GPT
+					</LoadingButton>
+					<Styles.Input
+						multiline
+						value={text}
+						onChange={(event) => setText(event.target.value)}
+						label="Input para o GPT"
+					/>
+					<Styles.Text variant="body2">Resposta do GPT: {data}</Styles.Text>
+				</Grid>
+				<Grid item sm={12} md={4}>
+					<Pomodoro />
+				</Grid>
+			</Grid>
 		</Container>
 	);
 };

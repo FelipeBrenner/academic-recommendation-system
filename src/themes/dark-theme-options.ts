@@ -29,9 +29,9 @@ const primary = {
 };
 
 const secondary = {
-	main: "#2196F3",
-	light: "#64B6F7",
-	dark: "#0B79D0",
+	main: "#d6d6d6",
+	light: "#9CA3AF",
+	dark: "#a3a3a3",
 	contrastText: neutral[900],
 };
 

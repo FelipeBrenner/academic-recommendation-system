@@ -27,6 +27,7 @@ export const baseThemeOptions: ThemeOptions = {
 			styleOverrides: {
 				root: {
 					textTransform: "none",
+					transition: "background-color 0.2s",
 				},
 				sizeSmall: {
 					padding: "6px 16px",

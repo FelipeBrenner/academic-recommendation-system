@@ -20,7 +20,6 @@ export const UsersPopover = ({
 }: UsersPopoverProps) => {
 	const [users, setUsers] = useState<IUser[]>([]);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const loadUsers = async () => {
 			const users = await usersDatabase.getUsers();
