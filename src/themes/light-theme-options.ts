@@ -22,9 +22,9 @@ const background = {
 const divider = "#E6E8F0";
 
 const primary = {
-	main: "#2D58D2",
-	light: "#214099",
-	dark: "#214099",
+	main: "#595959",
+	light: "#9CA3AF",
+	dark: "#404040",
 	contrastText: "#FFFFFF",
 };
 
@@ -64,9 +64,9 @@ const error = {
 };
 
 const text = {
-	primary: "#121828",
-	secondary: "#65748B",
-	disabled: "rgba(55, 65, 81, 0.48)",
+	primary: "#595959",
+	secondary: "#404040",
+	disabled: "rgba(255, 255, 255, 0.48)",
 };
 
 export const lightThemeOptions: ThemeOptions = {

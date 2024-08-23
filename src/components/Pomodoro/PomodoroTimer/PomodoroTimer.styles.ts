@@ -1,13 +1,11 @@
-import { Button as MuiButton, Card as MuiCard, styled } from "@mui/material";
+import { Button as MuiButton, styled } from "@mui/material";
 
-export const Card = styled(MuiCard)(({ theme }) => ({
-	padding: theme.spacing(3),
+export const Wrapper = styled("div")(({ theme }) => ({
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
 	gap: theme.spacing(2),
-	maxWidth: 300,
-	margin: "auto",
+	width: "100%",
 }));
 
 export const ButtonWrapper = styled("div")(({ theme }) => ({

@@ -9,9 +9,11 @@ const systemName = "acad-rec-sys";
 export const localStorageKeys = {
 	email: `${systemName}-email`,
 	settings: `${systemName}-settings`,
-	pomodoroTimeLeft: `${systemName}-pomodoro-time-left`,
-	pomodoroStartTime: `${systemName}-pomodoro-start-time`,
-	pomodoroIsActive: `${systemName}-pomodoro-is-active`,
+	pomodoroTimeLeft: (tab: number) => `${systemName}-pomodoro-time-left-${tab}`,
+	pomodoroStartTime: (tab: number) =>
+		`${systemName}-pomodoro-start-time-${tab}`,
+	pomodoroIsActive: (tab: number) => `${systemName}-pomodoro-is-active-${tab}`,
+	pomodoroTabSelected: `${systemName}-pomodoro-tab-selected`,
 };
 
 export const sidebarWidth = 240;

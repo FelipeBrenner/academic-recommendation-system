@@ -14,9 +14,9 @@ export const Home = () => {
 	};
 
 	return (
-		<Container>
+		<Container maxWidth="xl">
 			<Grid container spacing={3}>
-				<Grid item sm={12} md={8}>
+				<Grid item sm={12} md={7}>
 					<Styles.Title variant="h4">Home</Styles.Title>
 					<LoadingButton
 						loading={isFetching}
@@ -33,7 +33,7 @@ export const Home = () => {
 					/>
 					<Styles.Text variant="body2">Resposta do GPT: {data}</Styles.Text>
 				</Grid>
-				<Grid item sm={12} md={4}>
+				<Grid item sm={12} md={5}>
 					<Pomodoro />
 				</Grid>
 			</Grid>

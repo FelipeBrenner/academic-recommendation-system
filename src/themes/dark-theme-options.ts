@@ -22,9 +22,9 @@ const background = {
 const divider = "#404040";
 
 const primary = {
-	main: "#2D58D2",
-	light: "#214099",
-	dark: "#214099",
+	main: "#d6d6d6",
+	light: "#9CA3AF",
+	dark: "#a3a3a3",
 	contrastText: neutral[900],
 };
 
