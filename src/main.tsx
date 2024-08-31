@@ -1,3 +1,4 @@
+import { Toast } from "@components";
 import {
 	AuthProvider,
 	QueryClientProvider,
@@ -9,8 +10,9 @@ import { routers } from "@routers";
 import { createTheme } from "@themes";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
+
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(
 	document.getElementById("root") as ReactDOM.Container,
@@ -21,7 +23,7 @@ ReactDOM.createRoot(
 				{({ settings }) => (
 					<ThemeProvider theme={createTheme({ mode: settings.theme })}>
 						<CssBaseline />
-						<Toaster position="top-center" />
+						<Toast theme={settings.theme} />
 						<QueryClientProvider>
 							<AuthProvider>
 								<RouterProvider router={routers} />

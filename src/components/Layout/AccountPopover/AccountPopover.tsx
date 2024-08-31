@@ -11,8 +11,8 @@ import {
 	Typography,
 } from "@mui/material";
 import { getUserAcronym } from "@utils";
-import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import * as Styles from "./AccountPopover.styles";
 
 interface AccountPopoverProps {

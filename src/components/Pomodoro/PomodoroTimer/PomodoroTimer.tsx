@@ -1,15 +1,27 @@
 import { localStorageKeys } from "@constants";
-import { Typography } from "@mui/material";
+import { Typography, type ButtonProps } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useSound } from "use-sound";
 import { useLocalStorage } from "usehooks-ts";
 import { calculateTimeLeft } from "../calculateTimeLeft/calculateTimeLeft";
+import { formatTime } from "../formatTime/formatTime";
 import * as Styles from "./PomodoroTimer.styles";
 
 interface IPomodoroTimer {
 	time: number;
+	isSelected: boolean;
+	toastAlert: () => void;
 }
 
-export const PomodoroTimer = ({ time }: IPomodoroTimer) => {
+export const PomodoroTimer = ({
+	time,
+	isSelected,
+	toastAlert,
+}: IPomodoroTimer) => {
+	const [play] = useSound("src/assets/pomodoro-alarm.mp3", {
+		volume: 0.1,
+	});
+
 	let interval: NodeJS.Timeout | undefined;
 
 	const [startTime, setStartTime] = useLocalStorage<number | null>(
@@ -33,8 +45,10 @@ export const PomodoroTimer = ({ time }: IPomodoroTimer) => {
 			const newTimeLeft = calculateTimeLeft(startTime, time);
 			handleTimeLeft(newTimeLeft);
 
-			if (newTimeLeft <= 0) {
-				setIsActive(false);
+			if (newTimeLeft < 0) {
+				play();
+				toastAlert();
+				handleResetTimer();
 				clearInterval(interval);
 			}
 		};
@@ -77,10 +91,12 @@ export const PomodoroTimer = ({ time }: IPomodoroTimer) => {
 		setStartTime(null);
 	};
 
-	const formatTime = (seconds: number) => {
-		const minutes = Math.floor(seconds / 60);
-		const remainingSeconds = seconds % 60;
-		return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+	if (!isSelected) return null;
+
+	const defaultButtonProps: ButtonProps = {
+		variant: "contained",
+		size: "small",
+		color: "secondary",
 	};
 
 	return (
@@ -88,18 +104,14 @@ export const PomodoroTimer = ({ time }: IPomodoroTimer) => {
 			<Typography variant="h1">{formatTime(timeLeft)}</Typography>
 			<Styles.ButtonWrapper>
 				<Styles.Button
-					variant="contained"
-					size="small"
-					color="secondary"
+					{...defaultButtonProps}
 					onClick={handleStartTimer}
 					disabled={isActive || timeLeft === 0}
 				>
 					{startTime ? "Retomar" : "Iniciar"}
 				</Styles.Button>
 				<Styles.Button
-					variant="contained"
-					size="small"
-					color="secondary"
+					{...defaultButtonProps}
 					onClick={isActive ? handleStopTimer : handleResetTimer}
 					disabled={!startTime}
 				>

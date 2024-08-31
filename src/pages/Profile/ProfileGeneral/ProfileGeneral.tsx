@@ -11,7 +11,7 @@ import { storage } from "@services";
 import { getUserAcronym } from "@utils";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useRef, useState, type ChangeEvent } from "react";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 import * as Styles from "./ProfileGeneral.styles";
 
 export const ProfileGeneral = () => {

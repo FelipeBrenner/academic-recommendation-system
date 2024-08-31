@@ -1,6 +1,7 @@
 import { localStorageKeys } from "@constants";
 import { Tab, Tabs } from "@mui/material";
 import type { SyntheticEvent } from "react";
+import { toast } from "react-toastify";
 import { useLocalStorage } from "usehooks-ts";
 import * as Styles from "./Pomodoro.styles";
 import { PomodoroTimer } from "./PomodoroTimer/PomodoroTimer";
@@ -9,14 +10,32 @@ const tabs = [
 	{
 		label: "Foco",
 		time: 60 * 25,
+		toastAlert: () => {
+			toast("Tempo de foco acabou, vá dar uma pausa!", {
+				autoClose: false,
+				icon: () => "👏",
+			});
+		},
 	},
 	{
 		label: "Pausa curta",
 		time: 60 * 5,
+		toastAlert: () => {
+			toast("Tempo de pausa curta acabou, bom foco!", {
+				autoClose: false,
+				icon: () => "🚀",
+			});
+		},
 	},
 	{
 		label: "Pausa longa",
 		time: 60 * 15,
+		toastAlert: () => {
+			toast("Tempo de pausa longa acabou, bom foco!", {
+				autoClose: false,
+				icon: () => "🚀",
+			});
+		},
 	},
 ];
 
@@ -42,11 +61,14 @@ export const Pomodoro = () => {
 					<Tab key={tab.label} label={tab.label} />
 				))}
 			</Tabs>
-			{tabs.map((tab, index) =>
-				index === tabSelected ? (
-					<PomodoroTimer key={tab.label} time={tab.time} />
-				) : null,
-			)}
+			{tabs.map((tab, index) => (
+				<PomodoroTimer
+					key={tab.label}
+					time={tab.time}
+					isSelected={tabSelected === index}
+					toastAlert={tab.toastAlert}
+				/>
+			))}
 		</Styles.Card>
 	);
 };

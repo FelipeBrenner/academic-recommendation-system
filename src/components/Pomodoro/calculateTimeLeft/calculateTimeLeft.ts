@@ -4,9 +4,6 @@ export const calculateTimeLeft = (startTime: number | null, time: number) => {
 	const now = Math.floor(Date.now() / 1000);
 	const elapsedTime = now - startTime;
 	const newTimeLeft = time - elapsedTime;
-	if (newTimeLeft <= 0) {
-		return 0;
-	}
 
 	return newTimeLeft;
 };

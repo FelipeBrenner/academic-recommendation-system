@@ -1,4 +1,15 @@
-import { TextField, Typography, styled } from "@mui/material";
+import { Grid, TextField, Typography, styled } from "@mui/material";
+
+export const GridContainer = styled(Grid)(({ theme }) => ({
+	marginTop: 0,
+	width: "100%",
+	marginLeft: 0,
+}));
+
+export const GridItem = styled(Grid)(({ theme }) => ({
+	width: "100%",
+	padding: theme.spacing(3),
+}));
 
 export const Title = styled(Typography)(({ theme }) => ({
 	marginBottom: theme.spacing(3),
