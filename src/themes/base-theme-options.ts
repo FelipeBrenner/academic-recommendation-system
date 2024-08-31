@@ -274,6 +274,13 @@ export const baseThemeOptions: ThemeOptions = {
 				},
 			},
 		},
+		MuiGrid: {
+			styleOverrides: {
+				item: {
+					width: "100%",
+				},
+			},
+		},
 	},
 	direction: "ltr",
 	shape: {

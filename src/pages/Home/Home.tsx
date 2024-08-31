@@ -1,7 +1,7 @@
 import { useGetTest } from "@api";
-import { Pomodoro } from "@components";
+import { InformationCard, Pomodoro } from "@components";
 import { LoadingButton } from "@mui/lab";
-import { Container } from "@mui/material";
+import { Grid } from "@mui/material";
 import { informationCardResponse } from "mocks/responses";
 import { useState } from "react";
 import * as Styles from "./Home.styles";
@@ -15,9 +15,9 @@ export const Home = () => {
 	};
 
 	return (
-		<Container maxWidth="xl">
-			<Styles.GridContainer container>
-				<Styles.GridItem item sm={12} md={7}>
+		<Styles.Container maxWidth="xl">
+			<Grid container spacing={3}>
+				<Grid item sm={12} md={7}>
 					<Styles.Title variant="h4">Home</Styles.Title>
 					<LoadingButton
 						loading={isFetching}
@@ -33,18 +33,18 @@ export const Home = () => {
 						label="Input para o GPT"
 					/>
 					<Styles.Text variant="body2">Resposta do GPT: {data}</Styles.Text>
-				</Styles.GridItem>
-				<Styles.GridItem item sm={12} md={5}>
+				</Grid>
+				<Grid item sm={12} md={5}>
 					<Pomodoro />
-				</Styles.GridItem>
-			</Styles.GridContainer>
-			<Styles.GridContainer container>
+				</Grid>
+			</Grid>
+			<Grid container spacing={3}>
 				{informationCardResponse.map((info) => (
-					<Styles.GridItem key={info.type} item sm={12} md={4} lg={3}>
-						{info.message}
-					</Styles.GridItem>
+					<Grid key={info.type} item xs={12} sm={6} md={4} xl={3}>
+						<InformationCard information={info} />
+					</Grid>
 				))}
-			</Styles.GridContainer>
-		</Container>
+			</Grid>
+		</Styles.Container>
 	);
 };

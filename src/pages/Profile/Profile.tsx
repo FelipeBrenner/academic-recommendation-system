@@ -19,7 +19,7 @@ export const Profile = () => {
 	};
 
 	return (
-		<Container component="main">
+		<Container maxWidth="xl">
 			<Styles.Title variant="h4">Perfil</Styles.Title>
 			<Tabs
 				indicatorColor="primary"
