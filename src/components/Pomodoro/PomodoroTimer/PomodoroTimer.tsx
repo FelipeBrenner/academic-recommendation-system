@@ -59,7 +59,7 @@ export const PomodoroTimer = ({ time }: IPomodoroTimer) => {
 
 		const currentTime = Math.floor(Date.now() / 1000);
 
-		if (startTime) {
+		if (startTime && timeLeft > 0) {
 			setStartTime(startTime + (currentTime - startTime) - (time - timeLeft));
 			return;
 		}
@@ -92,7 +92,7 @@ export const PomodoroTimer = ({ time }: IPomodoroTimer) => {
 					size="small"
 					color="secondary"
 					onClick={handleStartTimer}
-					disabled={isActive}
+					disabled={isActive || timeLeft === 0}
 				>
 					{startTime ? "Retomar" : "Iniciar"}
 				</Styles.Button>
