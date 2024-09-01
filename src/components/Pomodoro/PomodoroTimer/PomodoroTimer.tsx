@@ -1,7 +1,6 @@
 import { localStorageKeys } from "@constants";
 import { Typography, type ButtonProps } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useSound } from "use-sound";
 import { useLocalStorage } from "usehooks-ts";
 import { calculateTimeLeft } from "../calculateTimeLeft/calculateTimeLeft";
 import { formatTime } from "../formatTime/formatTime";
@@ -18,10 +17,6 @@ export const PomodoroTimer = ({
 	isSelected,
 	toastAlert,
 }: IPomodoroTimer) => {
-	const [play] = useSound("src/assets/pomodoro-alarm.mp3", {
-		volume: 0.1,
-	});
-
 	let interval: NodeJS.Timeout | undefined;
 
 	const [startTime, setStartTime] = useLocalStorage<number | null>(
@@ -46,7 +41,9 @@ export const PomodoroTimer = ({
 			handleTimeLeft(newTimeLeft);
 
 			if (newTimeLeft < 0) {
-				play();
+				const audio = new Audio("src/assets/pomodoro-alarm.mp3");
+				audio.volume = 0.1;
+				audio.play();
 				toastAlert();
 				handleResetTimer();
 				clearInterval(interval);

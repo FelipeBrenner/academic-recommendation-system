@@ -53,9 +53,6 @@ dependencies:
   simplebar-react:
     specifier: ^3.2.6
     version: 3.2.6(react@18.3.1)
-  use-sound:
-    specifier: ^4.0.3
-    version: 4.0.3(react@18.3.1)
   usehooks-ts:
     specifier: ^3.1.0
     version: 3.1.0(react@18.3.1)
@@ -2778,10 +2775,6 @@ packages:
       react-is: 16.13.1
     dev: false
 
-  /howler@2.2.4:
-    resolution: {integrity: sha512-iARIBPgcQrwtEr+tALF+rapJ8qSc+Set2GJQl7xT1MQzWaVkFebdJhR3alVlSiUf5U7nAANKuj3aWpwerocD5w==}
-    dev: false
-
   /html-entities@2.5.2:
     resolution: {integrity: sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA==}
     requiresBuild: true
@@ -3766,15 +3759,6 @@ packages:
       escalade: 3.1.2
       picocolors: 1.0.1
     dev: true
-
-  /use-sound@4.0.3(react@18.3.1):
-    resolution: {integrity: sha512-L205pEUFIrLsGYsCUKHQVCt0ajs//YQOFbEQeNwaWaqQj3y3st4SuR+rvpMHLmv8hgTcfUFlvMQawZNI3OE18w==}
-    peerDependencies:
-      react: '>=16.8'
-    dependencies:
-      howler: 2.2.4
-      react: 18.3.1
-    dev: false
 
   /usehooks-ts@3.1.0(react@18.3.1):
     resolution: {integrity: sha512-bBIa7yUyPhE1BCc0GmR96VU/15l/9gP1Ch5mYdLcFBaFGQsdmXkvjV0TtOqW1yUd6VjIwDunm+flSciCQXujiw==}
