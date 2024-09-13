@@ -1,0 +1,29 @@
+{
+	"recommendations": [
+		{
+			"title": "Método Pomodoro",
+			"description": "O Método Pomodoro é uma técnica de gerenciamento de tempo desenvolvida por Francesco Cirillo, que sugere dividir seu tempo de estudo em intervalos de 25 minutos, chamados de 'pomodoros', seguidos por uma pausa de 5 minutos. Após completar quatro pomodoros, você faz uma pausa mais longa de 15-30 minutos. Essa técnica é útil para manter a concentração e evitar a fadiga mental, o que pode ser benéfico para trabalhadores noturnos como você, Felipe. Tente programar suas sessões de estudo durante a noite em blocos de tempo, usando um cronômetro para ajudar a monitorar seu progresso. Isso pode ser particularmente útil na sua rotina de estudos em Ciência da Computação, onde a programação e a lógica são assuntos centrais.",
+			"reason": "Melhora a concentração e produtividade, especialmente considerando sua carga horária noturna."
+		},
+		{
+			"title": "Matriz de Eisenhower",
+			"description": "A Matriz de Eisenhower é uma ferramenta de priorização que ajuda a classificar tarefas e atividades com base em sua urgência e importância. As tarefas são organizadas em quatro quadrantes: urgente e importante, importante mas não urgente, urgente mas não importante, e nem urgente nem importante. Para aplicá-la, faça uma lista de suas tarefas acadêmicas e diárias, como estudar para 'Teoria da Computação' ou trabalhar em projetos. Classifique-as na matriz e concentre-se primeiro nas atividades do primeiro quadrante. Esta técnica pode ajudar a gerenciar melhor seu tempo, evitando a sobrecarga em atividades que podem ser menos significativas.",
+			"reason": "Ajuda a focar no que realmente importa, especialmente em períodos de maior carga acadêmica."
+		},
+		{
+			"title": "Técnica de Time Blocking",
+			"description": "A Técnica de Time Blocking consiste em dividir sua agenda em blocos de tempo dedicados a tarefas específicas. Cada bloco é reservado para uma única tarefa, como estudar 'Algoritmos e Programação' ou preparar-se para suas disciplinas atuais. Para utilizá-la, reserve um tempo fixo para cada atividade do seu dia e evite interrupções durante esses períodos. Isso não apenas melhora a sua produtividade, mas também ajuda a equilibrar suas outras obrigações, como atividades complementares e lazer.",
+			"reason": "Maximiza a eficiência do seu tempo de estudo, especialmente quando você está gerenciando várias disciplinas."
+		},
+		{
+			"title": "Mapas Mentais",
+			"description": "Mapas mentais são representações visuais que ajudam a organizar e conectar informação de forma estruturada. Para estudar, você pode criar mapas mentais relacionados a 'Inteligência Artificial e Aprendizado de Máquina' ou 'Arquitetura de Software', visualizando os conceitos principais e detalhando subtemas. Isso não apenas facilita a compreensão, mas também melhora a memória. Use cores e imagens para tornar o mapa mais envolvente e pessoal.",
+			"reason": "Ajuda na organização do conhecimento e na memorização de tópicos complexos que você encontra em Ciência da Computação."
+		},
+		{
+			"title": "Diários de Aprendizagem",
+			"description": "Manter um diário de aprendizagem permite que você reflita sobre seus métodos de estudo, registre o que funcionou e o que não funcionou. Ao final de cada semana, escreva sobre as disciplinas que estudou, as técnicas que usou e como se sentiu em relação ao seu aprendizado. Isso irá ajudá-lo a entender melhor suas preferências e a adaptar suas estratégias conforme necessário, especialmente em um ambiente de ensino dinâmico como o seu. Além disso, essa reflexão pode aumentar sua autoeficácia, pois você poderá perceber seu progresso ao longo do semestre.",
+			"reason": "Promove a autorreflexão e a adaptação das estratégias de estudo, levando a uma melhor performance acadêmica."
+		}
+	]
+}

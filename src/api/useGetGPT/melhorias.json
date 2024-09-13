@@ -1,0 +1,34 @@
+{
+  "resposta": {
+    "informacoes_sugeridas": {
+      "habilidades_especificas": {
+        "descricao": "Lista de habilidades específicas que o aluno possui, como programação em determinadas linguagens, database management, etc.",
+        "importancia": "Ajuda a identificar as áreas em que o aluno se destaca e pode oferecer mentorias ou se inserir em projetos."
+      },
+      "dificuldades_enfrentadas": {
+        "descricao": "Relato sobre quais disciplinas ou tópicos específicos são mais desafiadores para o aluno, como dificuldade em álgebra linear ou em programação orientada a objetos.",
+        "importancia": "Permite abordagens direcionadas para melhorar as áreas de dificuldade."
+      },
+      "estilos_de_aprendizagem": {
+        "descricao": "Informações sobre como o aluno aprende melhor (visual, auditivo, kinestésico, etc.) e se ele prefere estudos individuais ou em grupo.",
+        "importancia": "Facilita a personalização das técnicas de estudo sugeridas, garantindo que elas se alinhem ao estilo do aluno."
+      },
+      "objetivos_academicos": {
+        "descricao": "Metas de curto e longo prazo, como formar-se com honras, conseguir um estágio em uma empresa específica, etc.",
+        "importancia": "Ajuda a alinhar as recomendações às aspirações do aluno, tornando os conselhos mais relevantes."
+      },
+      "feedback_de_professores": {
+        "descricao": "Comentários e avaliações dos professores sobre o desempenho do aluno, além de sugestões de melhoria.",
+        "importancia": "Oferece uma visão externa sobre o aluno e pode identificar áreas que precisam de atenção, que o próprio aluno pode não perceber."
+      },
+      "preferencias_de_horario": {
+        "descricao": "Horários em que o aluno se sente mais produtivo para estudar, como manhã, tarde ou noite.",
+        "importancia": "Permite otimizar a programação das técnicas de gestão de tempo e estudo."
+      },
+      "atividades_extras": {
+        "descricao": "Participação do aluno em atividades extracurriculares, como grupos de estudo, clubes de programação, workshops, etc.",
+        "importancia": "Identificar envolvimentos ajuda a sugerir métodos que se integrem com a rotina do aluno."
+      }
+    }
+  }
+}

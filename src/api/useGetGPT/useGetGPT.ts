@@ -1,18 +1,23 @@
 import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
+import systemContent from "./system.txt?raw";
+import userContent from "./user.json";
 
-export const useGetTest = (content: string) => {
+export const useGetGPT = () => {
 	const { data, isFetching, isError, refetch } = useQuery({
-		queryKey: ["test"],
+		queryKey: ["gpt"],
 		queryFn: async () => {
 			const completion = await openai.chat.completions.create({
-				messages: [
-					{ role: "system", content },
-					{ role: "system", content: "Use no máximo 20 palavras." },
-				],
 				model: "gpt-4o-mini",
-				temperature: 0.5,
-				max_tokens: 30,
+				messages: [
+					{ role: "system", content: systemContent },
+					{ role: "user", content: JSON.stringify(userContent) },
+				],
+				temperature: 1,
+				max_tokens: 16383,
+				response_format: {
+					type: "json_object",
+				},
 			});
 
 			return completion.choices[0].message.content;

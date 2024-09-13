@@ -1,1 +1,1 @@
-export * from "./useGetTest/useGetTest";
+export * from "./useGetGPT/useGetGPT";

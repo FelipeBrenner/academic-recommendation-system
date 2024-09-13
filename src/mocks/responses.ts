@@ -261,42 +261,42 @@ export const carlosPereiraResponse = {
 
 export const informationCardResponse = [
 	{
-		type: "two_minutes_rule",
+		type: "Regra dos Dois Minutos",
 		message:
 			"Proposta por David Allen, esta técnica sugere que se uma tarefa pode ser concluída em dois minutos ou menos, ela deve ser feita imediatamente. Isso ajuda a evitar a procrastinação e a acumulação de pequenas tarefas (ALLEN, 2001).",
 	},
 	{
-		type: "positive_feedback",
+		type: "Feedback Positivo",
 		message:
 			"Fornecer feedback positivo e construtivo pode reforçar a percepção de competência dos estudantes. O feedback deve ser específico e focado em aspectos que o estudante pode melhorar (BANDURA, 1997).",
 	},
 	{
-		type: "self_instruction",
+		type: "Autoinstrução",
 		message:
 			"Técnicas de autoinstrução, como falar consigo mesmo de maneira positiva e encorajadora, podem ajudar os estudantes a manterem-se focados e motivados (MEICHENBAUM, 1977).",
 	},
 	{
-		type: "mind_maps",
+		type: "Mapas Mentais",
 		message:
 			"Mapas mentais são diagramas que representam informações de maneira visual, ajudando na organização e na compreensão de conceitos complexos. Eles facilitam a memorização e a conexão entre diferentes tópicos (BUZAN, 1993).",
 	},
 	{
-		type: "self_questioning",
+		type: "Autoquestionamento",
 		message:
 			'Encorajar os estudantes a fazer perguntas a si mesmos durante o processo de estudo pode ajudar a monitorar a compreensão e identificar áreas que necessitam de mais atenção. Perguntas como "O que eu já sei sobre este tópico?"e "Como isso se relaciona com o que eu já aprendi?"são exemplos de autoquestionamento (KING, 1992).',
 	},
 	{
-		type: "sq3r_technic",
+		type: "Técnica SQ3R",
 		message:
 			"Esta técnica envolve cinco etapas: Survey (explorar), Question (questionar), Read (ler), Recite (recitar) e Review (revisar). É uma abordagem estruturada para a leitura e compreensão de textos, promovendo uma aprendizagem ativa e organizada (ROBINSON, 1970).",
 	},
 	{
-		type: "learning_diaries",
+		type: "Diários de Aprendizado",
 		message:
 			"Manter um diário de aprendizagem permite que os estudantes reflitam sobre seu processo de aprendizagem, identifiquem estratégias que funcionam e façam ajustes conforme necessário. Esta prática promove a autorreflexão e o desenvolvimento de habilidades metacognitivas (ZIEGLER, 2001).",
 	},
 	{
-		type: "graphic organizers",
+		type: "Organizadores Gráficos",
 		message:
 			"Ferramentas como diagramas de Venn, tabelas e gráficos ajudam na organização e visualização da informação, facilitando o entendimento e a memorização de conceitos complexos (NOVAK; GOWIN, 1998).",
 	},

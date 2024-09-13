@@ -1,18 +1,18 @@
-import { useGetTest } from "@api";
+import { useGetGPT } from "@api";
 import { InformationCard, Pomodoro } from "@components";
 import { LoadingButton } from "@mui/lab";
 import { Grid } from "@mui/material";
 import { informationCardResponse } from "mocks/responses";
-import { useState } from "react";
 import * as Styles from "./Home.styles";
 
 export const Home = () => {
-	const [text, setText] = useState("Diga que isso é um teste.");
-	const { data, isFetching, refetch } = useGetTest(text);
+	const { data, isFetching, refetch } = useGetGPT();
 
 	const handleClick = () => {
 		refetch();
 	};
+
+	console.log("data: ", data);
 
 	return (
 		<Styles.Container maxWidth="xl">
@@ -24,15 +24,8 @@ export const Home = () => {
 						color="inherit"
 						onClick={handleClick}
 					>
-						Clique para rodar a api do GPT
+						Clique para rodar a API do GPT
 					</LoadingButton>
-					<Styles.Input
-						multiline
-						value={text}
-						onChange={(event) => setText(event.target.value)}
-						label="Input para o GPT"
-					/>
-					<Styles.Text variant="body2">Resposta do GPT: {data}</Styles.Text>
 				</Grid>
 				<Grid item sm={12} md="auto">
 					<Pomodoro />
