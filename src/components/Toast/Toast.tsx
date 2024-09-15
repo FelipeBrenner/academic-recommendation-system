@@ -16,6 +16,7 @@ export const Toast = ({ theme }: IToast) => {
 			draggable
 			theme={theme}
 			transition={Bounce}
+			hideProgressBar
 		/>
 	);
 };
