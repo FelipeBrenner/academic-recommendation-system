@@ -2,7 +2,7 @@ import type { IGptResponse } from "@interfaces";
 import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
 import systemContent from "./system.txt?raw";
-import userContent from "./user.json";
+import userContent from "./user2.json";
 
 export const useGetGpt = () => {
 	const { isFetching, isError, refetch } = useQuery<IGptResponse>({

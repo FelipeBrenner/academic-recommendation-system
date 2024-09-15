@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import * as Styles from "./Home.styles";
 
+const tooltipRecommendations = ["metodo_pomodoro"];
+
 export const Home = () => {
 	const { user } = useAuth();
 	const { isFetching, refetch } = useGetGpt();
@@ -26,7 +28,7 @@ export const Home = () => {
 		};
 
 		loadRecommendations();
-	}, []);
+	}, [user]);
 
 	const handleClick = () => {
 		refetch()
@@ -61,25 +63,31 @@ export const Home = () => {
 					</LoadingButton>
 				</Grid>
 				<Grid item sm={12} md="auto">
-					<Pomodoro />
+					<Pomodoro recommendation={recommendations?.metodo_pomodoro} />
 				</Grid>
 			</Grid>
 			{recommendations && (
 				<Grid container spacing={3}>
 					{Object.keys(recommendations)
 						.sort()
-						.map((key) => (
-							<Grid
-								key={recommendations[key].titulo}
-								item
-								xs={12}
-								sm={6}
-								md={4}
-								xl={3}
-							>
-								<InformationCard information={recommendations[key]} />
-							</Grid>
-						))}
+						.map((key) => {
+							if (tooltipRecommendations.includes(key)) {
+								return null;
+							}
+
+							return (
+								<Grid
+									key={recommendations[key].titulo}
+									item
+									xs={12}
+									sm={6}
+									md={4}
+									xl={3}
+								>
+									<InformationCard information={recommendations[key]} />
+								</Grid>
+							);
+						})}
 				</Grid>
 			)}
 		</Styles.Container>

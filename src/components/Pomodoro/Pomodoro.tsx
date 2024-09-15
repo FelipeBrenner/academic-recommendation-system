@@ -1,4 +1,6 @@
+import { InformationCard } from "@components";
 import { localStorageKeys } from "@constants";
+import type { IRecommendation } from "@interfaces";
 import { Tab, Tabs } from "@mui/material";
 import type { SyntheticEvent } from "react";
 import { toast } from "react-toastify";
@@ -39,7 +41,11 @@ const tabs = [
 	},
 ];
 
-export const Pomodoro = () => {
+interface IPomodoro {
+	recommendation?: IRecommendation;
+}
+
+export const Pomodoro = ({ recommendation }: IPomodoro) => {
 	const [tabSelected, setTabSelected] = useLocalStorage<number | null>(
 		localStorageKeys.pomodoroTabSelected,
 		0,
@@ -51,6 +57,13 @@ export const Pomodoro = () => {
 
 	return (
 		<Styles.Card>
+			{recommendation && (
+				<Styles.InfoTooltip
+					title={<InformationCard information={recommendation} />}
+				>
+					<Styles.InfoIcon />
+				</Styles.InfoTooltip>
+			)}
 			<Tabs
 				value={tabSelected}
 				onChange={handleChange}
