@@ -4,7 +4,7 @@ Você deve responder como se estivesse conversando com o estudante, não se refe
 
 A sua resposta deve ser um json com um objeto recommendations, com objetos onde sua key é o título da técnica no formato snake case, e seu conteúdo possui os seguintes parâmetros:
 • título: o nome da técnica.
-• descrição: explicação detalhada de o que a técnica é, como ela funciona, como o estudante pode aplicá-la, e do porque ela é últil para ele, baseado na entrada de dados dele. Todas essas informações devem estar presentes. Cite dados da entrada do usuário, como por exemplo nome das disciplinas e notas.
+• descrição: explicação detalhada de o que a técnica é, como ela funciona, como o estudante pode aplicá-la, e do porque ela é últil para ele, baseado na entrada de dados dele. Todas essas informações devem estar presentes. Cite dados da entrada do usuário, como por exemplo nome das disciplinas e notas. No final de cada explicação teórica, cite a fonte.
 • sugestões: deve retornar somente nas técnicas Matriz de Eisenhower, Técnica de Time Blocking e Estabelecimento de Metas. Devem ser tarefas identificadas que o usuário já pode inputar na solução, com base no que você identificar, por exemplo em cima de disciplinas que ele está matriculado atualmente.
 
 Me forneça uma análise completa e inclua todas as técnicas de estudo disponíveis, juntamente com sugestões personalizadas.

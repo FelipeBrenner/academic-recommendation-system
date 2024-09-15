@@ -1,18 +1,16 @@
-import { useGetGPT } from "@api";
+import { useGetGpt } from "@api";
 import { InformationCard, Pomodoro } from "@components";
+import type { IRecommendation } from "@interfaces";
 import { LoadingButton } from "@mui/lab";
 import { Grid } from "@mui/material";
-import { informationCardResponse } from "mocks/responses";
 import * as Styles from "./Home.styles";
 
 export const Home = () => {
-	const { data, isFetching, refetch } = useGetGPT();
+	const { data, isFetching, refetch } = useGetGpt();
 
 	const handleClick = () => {
 		refetch();
 	};
-
-	console.log("data: ", data);
 
 	return (
 		<Styles.Container maxWidth="xl">
@@ -32,11 +30,13 @@ export const Home = () => {
 				</Grid>
 			</Grid>
 			<Grid container spacing={3}>
-				{informationCardResponse.map((info) => (
-					<Grid key={info.type} item xs={12} sm={6} md={4} xl={3}>
-						<InformationCard information={info} />
-					</Grid>
-				))}
+				{Object.values(data.recommendations).map(
+					(recommendation: IRecommendation) => (
+						<Grid key={recommendation.titulo} item xs={12} sm={6} md={4} xl={3}>
+							<InformationCard information={recommendation} />
+						</Grid>
+					),
+				)}
 			</Grid>
 		</Styles.Container>
 	);

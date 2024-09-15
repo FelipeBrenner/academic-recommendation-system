@@ -1,1 +1,1 @@
-export * from "./useGetGPT/useGetGPT";
+export * from "./useGetGpt/useGetGpt";

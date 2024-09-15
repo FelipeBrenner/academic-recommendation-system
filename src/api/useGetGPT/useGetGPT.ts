@@ -1,10 +1,11 @@
+import type { IGptResponse } from "@interfaces";
 import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
 import systemContent from "./system.txt?raw";
 import userContent from "./user.json";
 
-export const useGetGPT = () => {
-	const { data, isFetching, isError, refetch } = useQuery({
+export const useGetGpt = () => {
+	const { data, isFetching, isError, refetch } = useQuery<IGptResponse>({
 		queryKey: ["gpt"],
 		queryFn: async () => {
 			const completion = await openai.chat.completions.create({
@@ -20,10 +21,17 @@ export const useGetGPT = () => {
 				},
 			});
 
-			return completion.choices[0].message.content;
+			return JSON.parse(completion.choices[0].message.content ?? "");
 		},
 		enabled: false,
 	});
 
-	return { data, isFetching, isError, refetch };
+	return {
+		data: data ?? {
+			recommendations: {},
+		},
+		isFetching,
+		isError,
+		refetch,
+	};
 };
