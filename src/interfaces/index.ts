@@ -14,7 +14,7 @@ export interface IRecommendation {
 	sugestoes: string[];
 }
 
-interface IRecommendations {
+export interface IRecommendations {
 	metodo_pomodoro: IRecommendation;
 	matriz_de_eisenhower: IRecommendation;
 	tecnica_de_time_blocking: IRecommendation;
@@ -25,6 +25,7 @@ interface IRecommendations {
 	tecnica_sq3r: IRecommendation;
 	diarios_de_aprendizagem: IRecommendation;
 	organizadores_graficos: IRecommendation;
+	[key: string]: IRecommendation;
 }
 
 export interface IGptResponse {

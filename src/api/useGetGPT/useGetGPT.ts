@@ -5,7 +5,7 @@ import systemContent from "./system.txt?raw";
 import userContent from "./user.json";
 
 export const useGetGpt = () => {
-	const { data, isFetching, isError, refetch } = useQuery<IGptResponse>({
+	const { isFetching, isError, refetch } = useQuery<IGptResponse>({
 		queryKey: ["gpt"],
 		queryFn: async () => {
 			const completion = await openai.chat.completions.create({
@@ -27,9 +27,6 @@ export const useGetGpt = () => {
 	});
 
 	return {
-		data: data ?? {
-			recommendations: {},
-		},
 		isFetching,
 		isError,
 		refetch,
