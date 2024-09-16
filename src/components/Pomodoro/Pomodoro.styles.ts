@@ -24,3 +24,9 @@ export const InfoTooltip = styled(Tooltip)(() => ({
 		backgroundColor: "transparent !important",
 	},
 }));
+
+export const InfoTitle = styled("div")(({ theme }) => ({
+	".MuiCard-root": {
+		backgroundColor: theme.palette.neutral?.[800],
+	},
+}));

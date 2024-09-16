@@ -59,7 +59,11 @@ export const Pomodoro = ({ recommendation }: IPomodoro) => {
 		<Styles.Card>
 			{recommendation && (
 				<Styles.InfoTooltip
-					title={<InformationCard information={recommendation} />}
+					title={
+						<Styles.InfoTitle>
+							<InformationCard information={recommendation} />
+						</Styles.InfoTitle>
+					}
 				>
 					<Styles.InfoIcon />
 				</Styles.InfoTooltip>
