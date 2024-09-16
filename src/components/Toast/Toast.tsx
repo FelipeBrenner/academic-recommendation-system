@@ -17,6 +17,10 @@ export const Toast = ({ theme }: IToast) => {
 			theme={theme}
 			transition={Bounce}
 			hideProgressBar
+			toastStyle={{
+				borderRadius: 12,
+			}}
+			closeButton={false}
 		/>
 	);
 };

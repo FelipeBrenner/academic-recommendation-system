@@ -1,6 +1,5 @@
 import { pathRoutes, sidebarWidth } from "@constants";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import HomeIcon from "@mui/icons-material/Home";
+import { AccountCircle, CalendarMonth, Home } from "@mui/icons-material";
 import type { DrawerProps, Theme } from "@mui/material";
 import { Drawer, useMediaQuery } from "@mui/material";
 import { SidebarSection } from "../SidebarSection";
@@ -18,7 +17,12 @@ const sections = [
 			{
 				title: "Home",
 				path: pathRoutes.home,
-				icon: <HomeIcon fontSize="small" />,
+				icon: <Home fontSize="small" />,
+			},
+			{
+				title: "Calendário",
+				path: pathRoutes.calendar,
+				icon: <CalendarMonth fontSize="small" />,
 			},
 		],
 	},
@@ -28,7 +32,7 @@ const sections = [
 			{
 				title: "Perfil",
 				path: pathRoutes.perfil,
-				icon: <AccountCircleIcon fontSize="small" />,
+				icon: <AccountCircle fontSize="small" />,
 			},
 		],
 	},

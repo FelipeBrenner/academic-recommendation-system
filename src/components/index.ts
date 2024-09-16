@@ -1,4 +1,5 @@
 export * from "./AuthGuard/AuthGuard";
+export * from "./Calendar/Calendar";
 export * from "./InformationCard/InformationCard";
 export * from "./Layout/Layout";
 export * from "./Logo/Logo";

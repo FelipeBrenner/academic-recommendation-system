@@ -1,3 +1,8 @@
+import "@fullcalendar/react/dist/vdom";
+
+import "styles/common.css";
+import "styles/daygrid.css";
+
 import { Toast } from "@components";
 import {
 	AuthProvider,
