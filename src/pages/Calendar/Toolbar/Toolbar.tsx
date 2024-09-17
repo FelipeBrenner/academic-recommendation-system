@@ -2,7 +2,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import { format } from "date-fns";
 import moment from "moment";
-import "moment/locale/pt-br";
+import "moment/dist/locale/pt-br";
 import type { FC, ReactNode } from "react";
 
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";

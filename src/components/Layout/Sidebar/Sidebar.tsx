@@ -20,7 +20,7 @@ const sections = [
 				icon: <Home fontSize="small" />,
 			},
 			{
-				title: "Calendário",
+				title: "Metas",
 				path: pathRoutes.calendar,
 				icon: <CalendarMonth fontSize="small" />,
 			},
