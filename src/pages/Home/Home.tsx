@@ -1,21 +1,29 @@
 import { useGetGpt } from "@api";
-import { InformationCard, Pomodoro } from "@components";
+import { Pomodoro, RecommendationCard } from "@components";
+import { localStorageKeys } from "@constants";
 import { useAuth } from "@contexts";
 import { recommendationsDatabase } from "@database";
 import type { IRecommendations } from "@interfaces";
 import { LoadingButton } from "@mui/lab";
 import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { toast } from "react-toastify";
+import { useLocalStorage } from "usehooks-ts";
 import * as Styles from "./Home.styles";
 
-const tooltipRecommendations = ["metodo_pomodoro"];
+const tooltipRecommendations: Array<keyof IRecommendations> = [
+	"metodo_pomodoro",
+	"estabelecimento_de_metas",
+];
 
 export const Home = () => {
 	const { user } = useAuth();
 	const { isFetching, refetch } = useGetGpt();
 	const [recommendations, setRecommendations] =
-		useState<IRecommendations | null>(null);
+		useLocalStorage<IRecommendations | null>(
+			localStorageKeys.recommendations,
+			null,
+		);
 
 	useEffect(() => {
 		const loadRecommendations = async () => {
@@ -53,7 +61,6 @@ export const Home = () => {
 		<Styles.Container maxWidth="xl">
 			<Grid container spacing={3}>
 				<Grid item sm={12} md>
-					{/* <Styles.Title variant="h4">Home</Styles.Title> */}
 					<LoadingButton
 						loading={isFetching}
 						color="inherit"
@@ -68,7 +75,7 @@ export const Home = () => {
 			</Grid>
 			{recommendations && (
 				<Grid container spacing={3}>
-					{Object.keys(recommendations)
+					{(Object.keys(recommendations) as Array<keyof IRecommendations>)
 						.sort()
 						.map((key) => {
 							if (tooltipRecommendations.includes(key)) {
@@ -84,7 +91,7 @@ export const Home = () => {
 									md={4}
 									xl={3}
 								>
-									<InformationCard information={recommendations[key]} />
+									<RecommendationCard recommendation={recommendations[key]} />
 								</Grid>
 							);
 						})}

@@ -15,6 +15,7 @@ export const localStorageKeys = {
 		`${systemName}-pomodoro-start-time-${tab}`,
 	pomodoroIsActive: (tab: number) => `${systemName}-pomodoro-is-active-${tab}`,
 	pomodoroTabSelected: `${systemName}-pomodoro-tab-selected`,
+	recommendations: `${systemName}-recommendations`,
 };
 
 export const sidebarWidth = 240;

@@ -20,7 +20,6 @@ export const Profile = () => {
 
 	return (
 		<Container maxWidth="xl">
-			{/* <Styles.Title variant="h4">Perfil</Styles.Title> */}
 			<Tabs
 				indicatorColor="primary"
 				onChange={handleTabsChange}

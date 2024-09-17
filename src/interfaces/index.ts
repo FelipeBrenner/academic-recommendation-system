@@ -25,7 +25,7 @@ export interface IRecommendations {
 	tecnica_sq3r: IRecommendation;
 	diarios_de_aprendizagem: IRecommendation;
 	organizadores_graficos: IRecommendation;
-	[key: string]: IRecommendation;
+	// [key: string]: IRecommendation;
 }
 
 export interface IGptResponse {

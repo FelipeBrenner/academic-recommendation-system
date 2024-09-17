@@ -1,32 +1,13 @@
-import { Info } from "@mui/icons-material";
-import { Card as MuiCard, Tooltip, styled } from "@mui/material";
+import { Card as MuiCard, Tabs as MuiTabs, styled } from "@mui/material";
 
-export const Card = styled(MuiCard)(({ theme }) => ({
-	padding: "12px 24px 24px 24px",
+export const Card = styled(MuiCard)(() => ({
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
-	gap: theme.spacing(2),
 	maxWidth: 300,
 	margin: "auto",
 }));
 
-export const InfoIcon = styled(Info)(() => ({
-	position: "absolute",
-	alignSelf: "flex-end",
-	marginTop: "-14px",
-	marginRight: "-26px",
-	fontSize: "1rem",
-}));
-
-export const InfoTooltip = styled(Tooltip)(() => ({
-	".MuiTooltip-tooltip": {
-		backgroundColor: "transparent !important",
-	},
-}));
-
-export const InfoTitle = styled("div")(({ theme }) => ({
-	".MuiCard-root": {
-		backgroundColor: theme.palette.neutral?.[800],
-	},
+export const Tabs = styled(MuiTabs)(() => ({
+	padding: "12px 24px 0 24px",
 }));

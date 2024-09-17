@@ -6,6 +6,7 @@ export const Wrapper = styled("div")(({ theme }) => ({
 	alignItems: "center",
 	gap: theme.spacing(2),
 	width: "100%",
+	padding: "16px 24px 24px 24px",
 }));
 
 export const ButtonWrapper = styled("div")(({ theme }) => ({
