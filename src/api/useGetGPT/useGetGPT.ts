@@ -13,6 +13,7 @@ export const useGetGpt = () => {
 				messages: [
 					{ role: "system", content: systemContent },
 					{ role: "user", content: JSON.stringify(userContent) },
+					{ role: "assistant", content: "" },
 				],
 				temperature: 1,
 				max_tokens: 16383,

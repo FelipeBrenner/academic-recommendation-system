@@ -1,4 +1,4 @@
-import { useGetGpt } from "@api";
+import { useFiles, useGetRecommendations } from "@api";
 import { Pomodoro, RecommendationCard } from "@components";
 import { localStorageKeys } from "@constants";
 import { useAuth } from "@contexts";
@@ -18,12 +18,15 @@ const tooltipRecommendations: Array<keyof IRecommendations> = [
 
 export const Home = () => {
 	const { user } = useAuth();
-	const { isFetching, refetch } = useGetGpt();
+	const { files, create } = useFiles();
+	const { isFetching, refetch } = useGetRecommendations(files);
 	const [recommendations, setRecommendations] =
 		useLocalStorage<IRecommendations | null>(
 			localStorageKeys.recommendations,
 			null,
 		);
+
+
 
 	useEffect(() => {
 		const loadRecommendations = async () => {
@@ -36,6 +39,7 @@ export const Home = () => {
 		};
 
 		loadRecommendations();
+		
 	}, [user]);
 
 	const handleClick = () => {
@@ -57,6 +61,14 @@ export const Home = () => {
 			});
 	};
 
+	const handleClickFile = () => {
+		const loadFiles = async () => {
+			create("/Users/foliveib/ai-projects/academic-recommendation-system/src/api/useGetGpt/user.json");
+		};
+
+		loadFiles();
+	}
+
 	return (
 		<Styles.Container maxWidth="xl">
 			<Grid container spacing={3}>
@@ -66,7 +78,13 @@ export const Home = () => {
 						color="inherit"
 						onClick={handleClick}
 					>
-						Clique aqui para gerar suas recomendações
+						Gerar recomendações
+					</LoadingButton>
+					<LoadingButton
+						color="inherit"
+						onClick={handleClickFile}
+					>
+						Fazer upload do arquivo
 					</LoadingButton>
 				</Grid>
 				<Grid item sm={12} md="auto">
