@@ -1,9 +1,10 @@
 import type { IGptResponse } from "@interfaces";
 import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
-import { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
+import type { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
 import { useEffect, useState } from "react";
-import content from "../useGetGpt/system.txt?raw";
+import systemContent from "./system.txt?raw";
+import userContent from "./user.txt?raw";
 
 export const useGetRecommendations = (files: Array<{ id: string }>) => {
 	const [threadId, setThreadId] = useState("");
@@ -14,7 +15,7 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 				messages: [
 					{
 						role: "assistant",
-						content,
+						content: systemContent,
 					},
 				],
 			});
@@ -29,8 +30,7 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 		queryFn: async () => {
 			await openai.beta.threads.messages.create(threadId, {
 				role: "user",
-				content:
-					"Gere minha recomendações baseadas nessas minhas entradas de dados.",
+				content: userContent,
 				attachments: files.map((file) => ({
 					file_id: file.id,
 					tools: [{ type: "code_interpreter" }],
@@ -44,9 +44,9 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 			if (run.status === "completed") {
 				const messages = await openai.beta.threads.messages.list(run.thread_id);
 
-				console.log("messages: ", messages);
-
-				return JSON.parse((messages.data[0].content[0] as TextContentBlock)?.text.value ?? "");
+				return JSON.parse(
+					(messages.data[0].content[0] as TextContentBlock)?.text.value ?? "",
+				);
 			}
 
 			return {} as IGptResponse;

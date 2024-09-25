@@ -1,0 +1,9 @@
+Segue em anexo informações sobre mim, para você as utilizar para personalização conforme as instruções para o assistant.
+
+Quanto a um PDF com histórico escolar do curso de Ciência da Computação da Unisinos, você pode usar essa técnica abaixo para extração do texto, para ler as linhas com as disciplinas e notas.
+
+with pdfplumber.open(file_path_2) as pdf:
+    all_text = ""
+    for page in pdf.pages:
+        # Pegando cada linha de texto e adicionando ao resultado
+        all_text += page.extract_text() + "\n"

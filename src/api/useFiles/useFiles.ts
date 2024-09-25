@@ -1,6 +1,6 @@
 import { openai } from "@services";
 import type { FileObject } from "openai/resources/files.mjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useFiles = () => {
 	const [files, setFiles] = useState<Array<FileObject>>([]);
@@ -10,6 +10,10 @@ export const useFiles = () => {
 			setFiles(response.data);
 		});
 	};
+
+	useEffect(() => {
+		loadFiles();
+	}, []);
 
 	const create = async (path: string) => {
 		await openai.files.create({

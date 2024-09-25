@@ -3,15 +3,13 @@ export interface IUser {
 	avatar?: string;
 	email: string;
 	name: string;
-
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	[key: string]: any;
 }
 
 export interface IRecommendation {
 	titulo: string;
 	descricao: string;
-	sugestoes: string[];
+	subject?: string;
 }
 
 export interface IRecommendations {
@@ -25,11 +23,16 @@ export interface IRecommendations {
 	tecnica_sq3r: IRecommendation;
 	diarios_de_aprendizagem: IRecommendation;
 	organizadores_graficos: IRecommendation;
-	// [key: string]: IRecommendation;
+}
+
+export interface ISubject {
+	name: string;
+	grade: number;
 }
 
 export interface IGptResponse {
 	recommendations: IRecommendations;
+	academic_history?: Array<ISubject>;
 }
 
 export interface ICalendarEvent {

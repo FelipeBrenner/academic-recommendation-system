@@ -26,8 +26,6 @@ export const Home = () => {
 			null,
 		);
 
-
-
 	useEffect(() => {
 		const loadRecommendations = async () => {
 			const recommendations = await recommendationsDatabase.getRecommentations(
@@ -39,12 +37,13 @@ export const Home = () => {
 		};
 
 		loadRecommendations();
-		
 	}, [user]);
 
 	const handleClick = () => {
 		refetch()
 			.then((response) => {
+				if (response.status === "error") throw Error;
+
 				const recommendations = response.data?.recommendations;
 
 				if (recommendations) {
@@ -54,20 +53,23 @@ export const Home = () => {
 						userId: user!.id,
 						recommendations,
 					});
+					return;
 				}
 			})
 			.catch(() => {
-				toast.error("Erro ao gerar recomendações!");
+				toast.error("Houve um erro ao gerar as recomendações!");
 			});
 	};
 
 	const handleClickFile = () => {
 		const loadFiles = async () => {
-			create("/Users/foliveib/ai-projects/academic-recommendation-system/src/api/useGetGpt/user.json");
+			create(
+				"/Users/foliveib/ai-projects/academic-recommendation-system/files/historico-escolar.pdf",
+			);
 		};
 
 		loadFiles();
-	}
+	};
 
 	return (
 		<Styles.Container maxWidth="xl">
@@ -80,10 +82,7 @@ export const Home = () => {
 					>
 						Gerar recomendações
 					</LoadingButton>
-					<LoadingButton
-						color="inherit"
-						onClick={handleClickFile}
-					>
+					<LoadingButton color="inherit" onClick={handleClickFile}>
 						Fazer upload do arquivo
 					</LoadingButton>
 				</Grid>
