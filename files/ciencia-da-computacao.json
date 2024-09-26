@@ -1,0 +1,428 @@
+{
+	"1º Semestre": [
+		{
+			"codigo": "001010",
+			"nome": "Desenvolvimento Pessoal e Profissional",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para conhecer, vivenciar e discutir com professor/a e colegas o desenvolvimento pessoal e profissional diante das complexidades e perspectivas do mundo contemporâneo. Destaca-se nesse processo as vivências e provocações que proporcionam o autoconhecimento. O/A estudante terá a oportunidade de (re)conhecer as habilidades sociais que estão presentes em si e quais deveriam ser mais desenvolvidas no trato com o outro para a construção de relações de confiança e colaboração nos diversos contextos dos quais se faz parte.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "062123",
+			"nome": "Algoritmos e Programação: Fundamentos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender o enunciado de um problema e produzir um programa respeitando o paradigma da linguagem e que leve à sua solução. Busca, igualmente, aplicar estruturas básicas de dados na solução de problemas de programação de forma a fazer uso eficiente de memória e desempenho e a implementar programas legíveis, eficientes e corretos, respeitando as melhores práticas de desenvolvimento e convenção da linguagem de programação.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "062136",
+			"nome": "Computação: Conceitos e Tendências da Profissão",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para caracterizar o contexto geral das áreas de computação e de tecnologia da informação (TI) no âmbito nacional e internacional, entendendo como isso se articula com o curso de Ciência da Computação. Tem por objetivo também entender o panorama atual do mercado de trabalho, de empregabilidade e os principais setores de aplicação de TI, prospectando as possíveis carreiras e atividades de pesquisa e analisar diferentes plataformas computacionais e as tecnologias de hardware e software utilizadas, bem como tendências de desenvolvimento e novas aplicações.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "062137",
+			"nome": "Raciocínio Lógico",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Avaliar fórmulas da lógica proposicional (a partir de uma atribuição de valores). Avaliar fórmulas da lógica de primeira ordem (sobre o modelo na qual a fórmula deve ser interpretada). Modelar propriedades de sistemas computacionais usando lógicas apropriadas. Inferir novos conhecimentos a respeito de sistema usando sistemas de prova e de verificação para lógica proposicional e de primeira ordem. Realizar operações lógicas sobre proposições. Analisar e construir tabelas-verdade. Avaliar e validar argumentos.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "062138",
+			"nome": "Matemática para Computação",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender a simbologia e os conceitos de sequências, indução, logaritmos, somatórios e recorrência, utilizando técnicas diversas para a solução de equações e situações-problema. Busca, ainda, identificar progressões aritméticas e geométricas, seus elementos e fórmulas de soma e aplicar os conceitos de sequências na modelagem e na resolução de problemas, evidenciando a sua importância no estudo e análise de algoritmos na ciência da computação.",
+			"carga_horaria": 80
+		}
+	],
+	"2º Semestre": [
+		{
+			"codigo": "061921",
+			"nome": "Cálculo Diferencial",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve aulas presenciais e atividades para compreender as propriedades e regras operacionais que envolvem limites e derivadas para construir e analisar gráficos de funções, com vistas a empregá-los em outras áreas do conhecimento e em contextos variados. Busca-se também modelar e resolver situações-problema com a aplicação de raciocínio lógico, dos conceitos e da simbologia de limites e derivadas.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061926",
+			"nome": "Álgebra Linear e Geometria Analítica",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para resolver problemas que envolvem reta e plano, identificando os seus elementos, equações, gráficos e propriedades. Busca-se também compreender e utilizar métodos da Álgebra Linear necessários para a resolução de situações-problema que podem ser modelados matematicamente, interpretando e analisando as soluções obtidas, bem como modelar e resolver situações-problema com a aplicação de raciocínio lógico, espacial e matemático, dos conceitos e da simbologia de vetores e matrizes.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061939",
+			"nome": "Algoritmos e Programação: Orientação a Objetos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender o enunciado de um problema e produzir um programa respeitando o paradigma orientado a objeto que leve à sua solução. Busca, também, desenvolver modelos baseados em objetos, que utilizem de maneira adequada as construções do paradigma, respeitando as melhores práticas de desenvolvimento e convenção da linguagem de programação, bem como implementar programas legíveis, eficientes e corretos, fazendo uso dos algoritmos e das estruturas de dados adequadas através do paradigma orientado a objetos.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061945",
+			"nome": "Engenharia de Software: Fundamentos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender e analisar os princípios da engenharia de software considerando o histórico, o contexto e as características da área e para identificar os modelos de processo de software mais apropriados de acordo com a característica e contexto de cada modelo de processo e projeto de software. Visa ainda a compreender as metodologias ágeis de forma a aplicá-las adequadamente em um projeto de software adequadamente. Busca, também, projetar software utilizando técnicas de requisito, métodos ágeis e a linguagem UML como suporte, adequando-os de acordo com a complexidade do projeto.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061980",
+			"nome": "Sistemas Digitais",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para realizar o projeto e a implementação de circuitos digitais combinacionais e sequenciais e analisar circuitos digitais, verificando seu funcionamento e sendo capaz de corrigir e/ou melhorar implementações de circuitos já existentes.",
+			"carga_horaria": 80
+		}
+	],
+	"3º Semestre": [
+		{
+			"codigo": "061942",
+			"nome": "Fundamentos de Banco de Dados",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender os tipos de sistemas de gerência de banco de dados, para compreender a utilização do modelo entidade-relacionamento em projetos de banco de dados e para projetar, validar e implementar banco de dados relacionais com base nos modelos lógico e físico. Busca, ainda, compreender e aplicar a linguagem SQL para consultar, manipular e gerenciar banco de dados, bem como projetar, validar e implementar banco de dados semiestruturados.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061943",
+			"nome": "Algoritmos e Programação: Estruturas de Dados",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender o enunciado de um problema e produzir um programa respeitando a estrutura de dados adequada e para compreender e identificar o funcionamento das estruturas de dados do tipo árvore, bem como os diversos algoritmos de ordenação, assim como as suas classificações. Visa, ainda, a aplicar e implementar estruturas de dados do tipo árvore e algoritmos de ordenação na solução de problemas de programação de forma a fazer uso eficiente de memória e desempenho.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061944",
+			"nome": "Organização e Arquitetura de Computadores",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender os conceitos básicos relacionados à estrutura e ao funcionamento dos computadores digitais e reconhecer o funcionamento dos microcomputadores e periféricos a partir da análise de seus componentes. Busca, também, relacionar o funcionamento da organização interna do processador com as características das linguagens de montagem, do conjunto de instruções, dos montadores, carregadores, e ligadores e compreender a evolução das arquiteturas computacionais com a utilização de paralelismo, máquinas escalares vetoriais e as tendências das arquiteturas futuras.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061946",
+			"nome": "Paradigmas de Programação",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "Identificar as características e as limitações das linguagens de programação pertencentes aos diferentes paradigmas estudados. Determinar o paradigma de programação mais adequado para implementar a solução de um determinado problema. Construir programas que sigam os paradigmas das diferentes linguagens de programação estudadas.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "061952",
+			"nome": "Engenharia de Software: Arquitetura e Padrões",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender e analisar o contexto atual da engenharia de software considerando o histórico e as características da área. Busca, também, desenvolver projetos de software utilizando padrões arquiteturais, de projeto e de implementação, desenvolvendo entregáveis (artefatos) para cada etapa de desenvolvimento do projeto, bem como aplicar metodologia ágil no desenvolvimento de projetos de software.",
+			"carga_horaria": 80
+		}
+	],
+	"4º Semestre": [
+		{
+			"codigo": "061932",
+			"nome": "Cálculo Integral e de Várias Variáveis",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender as propriedades e as técnicas de integração, utilizando tais conceitos no cálculo de áreas de regiões planas e volumes de sólidos de revolução. Pretende-se também modelar a resolução de situações-problema com a aplicação, com raciocínio lógico, dos conceitos e da simbologia das integrais, bem como compreender as propriedades e os conceitos de derivação e integração de funções de várias variáveis.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061947",
+			"nome": "Sistemas Operacionais: Fundamentos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para caracterizar e dominar conceitos básicos associados aos principais sistemas operacionais em termos de sua estrutura interna e para distinguir os diferentes componentes de um sistema operacional, identificando suas funcionalidades e aplicações. Busca, também, construir programas utilizando os recursos oferecidos pelo sistema operacional e realizar operações de entrada e saída utilizando recursos oferecidos pelo sistema operacional.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061948",
+			"nome": "Redes de Computadores: Aplicação e Transporte",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para entender os princípios comuns aos protocolos de aplicação e transporte, os objetivos e as premissas em redes de computadores. Busca, também, conhecer e caracterizar as principais aplicações de rede da internet e seus protocolos e desenvolver aplicações que utilizam redes de computadores usando sockets. Objetiva, igualmente, empregar ferramentas de análise e captura de dados em atividades de estudo de protocolos e do tráfego da rede.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061949",
+			"nome": "Análise e Projeto de Algoritmos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Avaliar algoritmos sob o ponto de vista da sua complexidade computacional. Elaborar algoritmos usando técnicas de desenvolvimento que minimizem a complexidade destes. Reconhecer a classe de complexidade dos problemas computáveis.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061950",
+			"nome": "Linguagens Formais e Autômatos",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "Escolher adequadamente sensores e transdutores para medições e controle de processos ou sistemas das principais grandezas físicas. Projetar e construir alguns tipos de condicionadores de sinais para transdutores.",
+			"carga_horaria": 80
+		}
+	],
+	"5º Semestre": [
+		{
+			"codigo": "061941",
+			"nome": "Design de Interação Humano-Computador",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Reconhecer os princípios e critérios que regem o bom projeto de interface de acordo com os requisitos ergonômicos de sistemas computacionais. Elaborar, apresentar e avaliar um projeto de interfaces de acordo com princípios e critérios estipulados para elaboração e análise de interface.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061951",
+			"nome": "Algoritmos e Programação: Estruturas Avançadas de Dados",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para compreender o enunciado de um problema e produzir um programa respeitando o tipo abstrato de dados e a estrutura de dados adequada e para compreender e identificar o funcionamento das estruturas de dados do tipo hash, filas de prioridades e grafos, bem como os diversos algoritmos de ordenação e suas classificações. Busca, também, aplicar e implementar estruturas de dados na solução de problemas de programação de forma a fazer uso eficiente de memória e desempenho.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061953",
+			"nome": "Inteligência Artificial e Aprendizado de Máquina",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para dominar os conceitos, as bases e as técnicas da Inteligência Artificial. Busca, igualmente, especificar, modelar e implementar sistemas baseados em técnicas de Inteligência Artificial e utilizar ferramentas e bibliotecas para o desenvolvimento de aplicações envolvendo Inteligência Artificial.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061954",
+			"nome": "Sistemas de Gerência de Banco de Dados",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos e assíncronos para compreender os diversos modelos e arquiteturas de sistemas de gerência de banco de dados, com foco nos modelos relacional e não-relacional, bem como as técnicas de gerenciamento de armazenamento e de estruturas de indexação, além de suas aplicações. Visa também a discernir e aplicar sistemas de gerência de banco de dados de acordo com o contexto de aplicação e o projeto estabelecido e a refletir sobre as tendências para esses sistemas.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "061955",
+			"nome": "Sistemas Operacionais: Análise e Aplicações",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos e assíncronos para operar diferentes tipos de sistemas operacionais, com interfaces e propósitos variados, bem como para desenvolver programas que explorem os mais variados serviços oferecidos pelos sistemas operacionais e realizar operações de entrada e saída utilizando recursos oferecidos pelo sistema operacional.",
+			"carga_horaria": 40
+		}
+	],
+	"6º Semestre": [
+		{
+			"codigo": "061956",
+			"nome": "Redes de Computadores: Internetworking, Roteamento e Transmissão",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para comparar algoritmos para seleção de caminho e diferentes esquemas de roteamento, avaliando suas vantagens e desvantagens, bem como avaliar estratégias de funcionamento interno de roteadores e switches e seu impacto, considerando diferentes aspectos, como desempenho e escalabilidade. Busca, ainda, elaborar um projeto de uma rede de computadores simples e a projetar e implantar roteamento em redes de computadores.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061957",
+			"nome": "Processamento Gráfico: Fundamentos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Compreender os principais conceitos e etapas no processo de visualização em computação gráfica. Dominar a utilização de técnicas de computação gráfica na resolução de problemas que exigem processamento gráfico. Implementar um sistema interativo simples de computação gráfica. Entender as áreas do processamento gráfico: computação gráfica, processamento de imagens, realidade virtual, interfaces, visão computacional.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061958",
+			"nome": "Teoria da Computação",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Entender, analisar e avaliar problemas reais sob o ponto de vista da computabilidade dos mesmos. Determinar se uma dada máquina é uma máquina universal. Verificar a equivalência entre programas e entre máquinas. Determinar a classe de complexidade de um dado problema. Determinar a classe de computabilidade (solucionável, parcialmente solucionável ou insolúvel) de um dado problema.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061959",
+			"nome": "Ciência de Dados e Big Data",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos e assíncronos para interpretar grandes conjuntos de dados usando técnicas estatísticas e selecionar e utilizar linguagens de programação voltadas para manipulação e análise de dados. Busca, também, construir e otimizar modelos de machine learning para previsão, personalização, apoio à tomada de decisão, entre outros, e empregar tecnologias para processar grandes volumes de dados.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "061960",
+			"nome": "Controle Estatístico da Qualidade",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve aulas na modalidade a distância para analisar dados usando estatística para inferir sobre medidas dos produtos e processos. Busca-se também analisar estabilidade, capacidade e capabilidade de processos, para avaliar, prover melhorias em processos e tomar de decisões com base estatística, bem como utilizar modelos probabilísticos para ajustar e inferir sobre as variáveis aleatórias em estudo.",
+			"carga_horaria": 40
+		}
+	],
+	"7º Semestre": [
+		{
+			"codigo": "061961",
+			"nome": "Teoria da Informação: Compressão e Criptografia",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Implementar e avaliar técnicas de transmissão de dados e algoritmos para detecção e correção de erros. Implementar e avaliar técnicas de criptografia e os algoritmos para cifragem de dados. Implementar e avaliar técnicas de compactação de dados e os seus fundamentos teóricos. Analisar um canal de comunicação de dados do ponto de vista da transmissão dos mesmos a partir de suas características físicas. Analisar algoritmos de compactação e codificação da informação.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061962",
+			"nome": "Processamento Gráfico: Computação Gráfica e Aplicações",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Dominar os principais conceitos e etapas no processo de síntese de imagens em computação gráfica. Utilizar técnicas de computação gráfica na resolução de problemas que exigem processamento gráfico. Implementar um sistema interativo complexo de computação gráfica.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061963",
+			"nome": "Computação de Alto Desempenho",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Desenvolver algoritmos paralelos e distribuídos para caracterizar a concorrência de aplicações. Utilizar técnicas e ferramentas de programação paralela e distribuída para construção de aplicações em arquiteturas multiprocessadas e em aglomerados de computadores. Explorar a capacidade de processamento de arquiteturas paralelas através do emprego de técnicas de escalonamento. Identificar aplicações e problemas reais passíveis de solução com a aplicação de técnicas de programação paralela e distribuída.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061964",
+			"nome": "Laboratório de Inteligência Artificial",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos e assíncronos para compreender as arquiteturas e o funcionamento de redes profundas e aplicar técnicas de transferência de aprendizado em diferentes contextos. Busca, também, desenvolver e implementar modelos de aprendizado por reforço profundo, utilizar ferramentas e bibliotecas para desenvolvimento de projetos de IA, bem como projetar e executar experimentos para avaliar o desempenho de modelos de IA.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "061965",
+			"nome": "Projeto Aplicado 1",
+			"tipo_aula": "Projeto Aplicado/TCC",
+			"descricao_tipo_aula": "Esta atividade prevê o desenvolvimento do seu projeto para a conclusão de curso.",
+			"ementa": "Desenvolver uma proposta de projeto de forma escrita e gráfica. Projetar de maneira crítica e criativa as etapas de criação e elaboração da proposta de pesquisa e trabalho. Elaborar o cronograma de tarefas para os Projetos Aplicados 1 e 2, prospectando continuidade e finalização. A experiência de aprendizagem envolve encontros com o/a professor/a orientador/a e a produção conceitual e textual a partir de pesquisa e reflexão. Para cursar a Atividade Acadêmica, é necessário ter concluído 2/3 da carga horária do curso.",
+			"carga_horaria": 80
+		}
+	],
+	"8º Semestre": [
+		{
+			"codigo": "061966",
+			"nome": "Simulação e Modelagem de Sistemas",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Desenvolver simulações que abranjam todas etapas do processo de modelagem e simulação de sistemas. Determinar os principais fatores que influenciam a modelagem de um sistema, sua validação e experimentação. Determinar a adequação de simulações a problemas específicos. Escolher linguagens e modelos de simulação adequados a resolução de um problema.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061967",
+			"nome": "Compiladores",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para identificar as principais fases do processo de tradução de linguagens e analisar as melhores alternativas de implementação para cada fase, considerando aspectos como desempenho, utilização otimizada de recursos de máquina e manutenibilidade. Busca, ainda, utilizar geradores automáticos de analisadores estruturais em cada fase do processo de tradução e produzir tradutores aplicáveis aos variados domínios de aplicação possíveis.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061968",
+			"nome": "Sistemas Distribuídos",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "Identificar as classes de problemas encontrados em sistemas distribuídos e os principais algoritmos utilizados para sua solução. Analisar o funcionamento de sistemas distribuídos e identificar seus mecanismos e protocolos. Projetar aplicações distribuídas simples, combinando componentes básicos e instanciando exemplos típicos de sistemas existentes. Implementar sistemas distribuídos simples com grau variado de descentralização usando Sockets e TCP/IP.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061969",
+			"nome": "Internet das Coisas: Sensores, Protocolos e Aplicações",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos e assíncronos para conhecer o paradigma da Internet das Coisas e suas aplicações. Busca apropriar-se de tecnologias para utilização do paradigma IoT, analisar situações e soluções para resolução de problemas que possam utilizar IoT e ainda desenvolver sistemas utilizando sensores e wearables. Visa, também, a perceber perspectivas de futuro para a evolução da área.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "061970",
+			"nome": "Projeto Aplicado 2",
+			"tipo_aula": "Projeto Aplicado/TCC",
+			"descricao_tipo_aula": "Esta atividade prevê o desenvolvimento do seu projeto para a conclusão de curso.",
+			"ementa": "Executar o projeto elaborado em Projeto Aplicado 1. Aplicar conhecimentos com foco na inovação, para o desenvolvimento da proposta relacionada à comunicação digital. Operar um projeto em todas as suas fases: problematização, concepção, desenvolvimento analítico, expressão formal e comunicacional. Desenvolver, de acordo com as características específicas do projeto realizado, uma forma apropriada para apresentá-lo. A experiência de aprendizagem envolve encontros com o/a professor/a orientador/a e a produção do Projeto Aplicado. Para cursá-la, é preciso ter concluído “Projeto Aplicado 1”.",
+			"carga_horaria": 80
+		}
+	],
+	"Optativas": [
+		{
+			"codigo": "001011",
+			"nome": "Cultura Surda e LIBRAS",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve aulas presenciais no Campus, com o objetivo de conhecer as especificidades linguísticas da comunidade surda e refletir sobre as possibilidades de inclusão e acessibilidade dos sujeitos surdos no mercado de trabalho. Na Atividade Acadêmica você terá a possibilidade de desenvolver expressão corporal e facial estabelecendo uma comunicação em Libras.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "001012",
+			"nome": "Inclusão e Acessibilidade em Contextos Profissionais",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve aulas presenciais no Campus, com o objetivo de conhecer e problematizar os processos de inclusão nas organizações. Serão analisados os impactos da inclusão no mercado de trabalho e na sociedade a fim de identificar instrumentos, recursos e tecnologias assistivas para utilização em diferentes contextos profissionais.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061971",
+			"nome": "Tópicos Avançados em Ciência da Computação",
+			"tipo_aula": "Online/Ao Vivo",
+			"descricao_tipo_aula": "Nesta disciplina, os encontros serão online com o professor conforme os horários das aulas no Microsoft Teams.",
+			"ementa": "",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061973",
+			"nome": "Circuitos Microprocessados",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus para desenvolver rotinas de software em linguagem C, implementação de algoritmos com foco em aplicações embarcadas de controle, instrumentação e automação, bem como para projetar e desenvolver interfaces físicas (hardware) para sistemas microcontrolados e microprocessados.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061974",
+			"nome": "Realidade Virtual",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061975",
+			"nome": "Desenvolvimento para Web",
+			"tipo_aula": "Online/Ao Vivo",
+			"descricao_tipo_aula": "Nesta disciplina, os encontros serão online com o professor conforme os horários das aulas no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos para conceituar as características de aplicações em sistemas para internet, em especial aplicações em ambiente web. Busca, também, desenvolver páginas web dinâmicas, utilizando uma linguagem de programação e tecnologias apropriadas, bem como conhecer as tendências da área, em especial a introdução de novas tecnologias e sua integração com tecnologias existentes.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "061976",
+			"nome": "Redes Avançadas",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "A experiência de aprendizagem envolve encontros remotos síncronos e assíncronos para entender os avanços recentes em tecnologias e protocolos utilizados em redes de computadores e analisar criticamente as novas tecnologias e tendências nesse contexto. Busca, também, identificar a tecnologia adequada para resolver problemas de redes de computadores e avaliar vantagens, desvantagens e desafios ao empregar diferentes tecnologias de redes.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "061982",
+			"nome": "Modelagem 3D e Desenho Técnico",
+			"tipo_aula": "Presencial",
+			"descricao_tipo_aula": "Esta é uma disciplina presencial com aulas no campus.",
+			"ementa": "A experiência de aprendizagem envolve encontros presenciais no campus, com aulas em Laboratório de Computação Gráfica. A Atividade objetiva modelar a geometria tridimensional sólida de componentes e conjuntos, utilizando software de CAD, bem como interpretar e executar desenho técnico seguindo as normas apropriadas. Busca-se também elaborar desenhos detalhados para fabricação, com vistas ortogonais, auxiliares, cortes, perspectivas e contagem, e desenhos de montagens, com vistas explodidas e lista de materiais.",
+			"carga_horaria": 80
+		},
+		{
+			"codigo": "051230",
+			"nome": "Educação Financeira",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "Nesta atividade o estudante irá compreender os conceitos fundamentais de finanças pessoais. A experiência de aprendizagem envolve aulas na modalidade a distância.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "051231",
+			"nome": "Ética nas Organizações",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "Nesta atividade o estudante irá conhecer elementos teóricos básicos de ética e a sua conexão e aplicação no mundo das organizações e no exercício da formação integral. A experiência de aprendizagem envolve aulas na modalidade a distância.",
+			"carga_horaria": 40
+		},
+		{
+			"codigo": "051241",
+			"nome": "Tópicos de Responsabilidade Ambiental, Social e Governança",
+			"tipo_aula": "EaD",
+			"descricao_tipo_aula": "Esta é uma disciplina com atividades autodirigidas na plataforma Moodle. Além disso, quinzenalmente, você tem a possibilidade de participar de aulas online no Microsoft Teams.",
+			"ementa": "Nesta Atividade, o estudante irá entender os princípios fundamentais de responsabilidade ambiental, social e governança e como eles se aplicam aos negócios e organizações. A experiência de aprendizagem envolve aulas na modalidade a distância.",
+			"carga_horaria": 40
+		}
+	]
+}

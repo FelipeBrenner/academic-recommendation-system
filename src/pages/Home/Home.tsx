@@ -42,7 +42,9 @@ export const Home = () => {
 	const handleClick = () => {
 		refetch()
 			.then((response) => {
-				if (response.status === "error") throw Error;
+				console.log("response: ", response);
+				if (response.status === "error")
+					throw new Error(response.error.message);
 
 				const recommendations = response.data?.recommendations;
 
@@ -56,7 +58,13 @@ export const Home = () => {
 					return;
 				}
 			})
-			.catch(() => {
+			.catch((message) => {
+				console.log("message: ", message);
+				if (message) {
+					toast.error(message);
+					return;
+				}
+
 				toast.error("Houve um erro ao gerar as recomendações!");
 			});
 	};

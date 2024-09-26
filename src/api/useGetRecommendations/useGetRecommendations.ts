@@ -3,7 +3,8 @@ import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
 import type { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
 import { useEffect, useState } from "react";
-import systemContent from "./system.txt?raw";
+import bibliographyContent from "./bibliography.txt?raw";
+import instructionsContent from "./instructions.txt?raw";
 import userContent from "./user.txt?raw";
 
 export const useGetRecommendations = (files: Array<{ id: string }>) => {
@@ -15,7 +16,11 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 				messages: [
 					{
 						role: "assistant",
-						content: systemContent,
+						content: instructionsContent,
+					},
+					{
+						role: "assistant",
+						content: bibliographyContent,
 					},
 				],
 			});
@@ -44,9 +49,12 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 			if (run.status === "completed") {
 				const messages = await openai.beta.threads.messages.list(run.thread_id);
 
-				return JSON.parse(
-					(messages.data[0].content[0] as TextContentBlock)?.text.value ?? "",
-				);
+				const text =
+					(messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
+
+				if (text.includes("recommendations")) return JSON.parse(text);
+
+				throw new Error(text);
 			}
 
 			return {} as IGptResponse;
