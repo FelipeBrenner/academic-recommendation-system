@@ -49,12 +49,17 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 			if (run.status === "completed") {
 				const messages = await openai.beta.threads.messages.list(run.thread_id);
 
-				const text =
-					(messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
+				try {
+					const text =
+						(messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
 
-				if (text.includes("recommendations")) return JSON.parse(text);
+					if (text.includes("recommendations")) return JSON.parse(text);
 
-				throw new Error(text);
+					throw new Error(text);
+				} catch (error) {
+					console.log("error: ", error);
+					throw new Error("Erro na conversão dos dados para json!");
+				}
 			}
 
 			return {} as IGptResponse;

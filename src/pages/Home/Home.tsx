@@ -43,8 +43,9 @@ export const Home = () => {
 		refetch()
 			.then((response) => {
 				console.log("response: ", response);
-				if (response.status === "error")
-					throw new Error(response.error.message);
+				if (response.status === "error") {
+					toast.error(response.error.message);
+				}
 
 				const recommendations = response.data?.recommendations;
 
@@ -58,13 +59,7 @@ export const Home = () => {
 					return;
 				}
 			})
-			.catch((message) => {
-				console.log("message: ", message);
-				if (message) {
-					toast.error(message);
-					return;
-				}
-
+			.catch(() => {
 				toast.error("Houve um erro ao gerar as recomendações!");
 			});
 	};
