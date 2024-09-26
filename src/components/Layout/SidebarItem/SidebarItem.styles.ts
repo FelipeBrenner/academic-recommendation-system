@@ -5,22 +5,22 @@ import type { LinkProps } from "react-router-dom";
 interface CustomizedButtonProps
 	extends ButtonProps,
 		Partial<Pick<LinkProps, "to">> {
-	paddingLeft: number;
-	active?: boolean;
+	pl: number;
+	active?: string;
 }
 
 export const ParentButton: StyledComponent<CustomizedButtonProps> = styled(
 	Button,
-)<CustomizedButtonProps>(({ paddingLeft, active, theme }) => ({
+)<CustomizedButtonProps>(({ pl, active, theme }) => ({
 	justifyContent: "flex-start",
-	paddingLeft,
+	paddingLeft: pl,
 	paddingRight: theme.spacing(3),
 	textAlign: "left",
 	textTransform: "none",
 	width: "100%",
 	borderRadius: theme.shape.borderRadius,
 	color: theme.palette.text.secondary,
-	...(active && {
+	...(active === "true" && {
 		backgroundColor: theme.palette.action.selected,
 		fontWeight: "bold",
 	}),

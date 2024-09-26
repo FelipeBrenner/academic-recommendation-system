@@ -42,6 +42,8 @@ export const SidebarItem = ({
 		paddingLeft = 32 + 8 * depth;
 	}
 
+	const isActive = active ? "true" : "false";
+
 	if (children) {
 		return (
 			<Styles.ChildrenListItem disableGutters {...other}>
@@ -56,8 +58,8 @@ export const SidebarItem = ({
 					disableRipple
 					onClick={handleToggle}
 					startIcon={icon}
-					paddingLeft={paddingLeft}
-					active={active}
+					pl={paddingLeft}
+					active={isActive}
 				>
 					{title}
 					{info}
@@ -77,8 +79,8 @@ export const SidebarItem = ({
 				startIcon={icon}
 				endIcon={chip}
 				disableRipple
-				paddingLeft={paddingLeft}
-				active={active}
+				pl={paddingLeft}
+				active={isActive}
 			>
 				{title}
 				{info}
