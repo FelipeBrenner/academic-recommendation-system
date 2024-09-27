@@ -7,3 +7,15 @@ with pdfplumber.open(file_path_2) as pdf:
     for page in pdf.pages:
         # Pegando cada linha de texto e adicionando ao resultado
         all_text += page.extract_text() + "\n"
+
+Se o arquivo inputado for um json, é essa técnica que você deve utilizar para extrair as informações:
+
+import json
+
+# Tentar carregar o arquivo como JSON
+file_path_ementas_json = '/mnt/data/file-FRLrxhBokOhxSSD5b77xgi1Q'
+
+with open(file_path_ementas_json, 'r') as file:
+    ementas_data = json.load(file)
+
+ementas_data

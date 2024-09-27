@@ -40,28 +40,22 @@ export const Home = () => {
 	}, [user]);
 
 	const handleClick = () => {
-		refetch()
-			.then((response) => {
-				console.log("response: ", response);
-				if (response.status === "error") {
-					toast.error(response.error.message);
-				}
+		refetch().then((response) => {
+			if (response.status === "error") {
+				toast.error(response.error.message);
+			}
 
-				const recommendations = response.data?.recommendations;
+			const recommendations = response.data?.recommendations;
 
-				if (recommendations) {
-					toast.success("Recomendações geradas com sucesso!");
-					setRecommendations(recommendations);
-					recommendationsDatabase.updateRecommentations({
-						userId: user!.id,
-						recommendations,
-					});
-					return;
-				}
-			})
-			.catch(() => {
-				toast.error("Houve um erro ao gerar as recomendações!");
-			});
+			if (recommendations) {
+				toast.success("Recomendações geradas com sucesso!");
+				setRecommendations(recommendations);
+				recommendationsDatabase.updateRecommentations({
+					userId: user!.id,
+					recommendations,
+				});
+			}
+		});
 	};
 
 	const handleClickFile = () => {

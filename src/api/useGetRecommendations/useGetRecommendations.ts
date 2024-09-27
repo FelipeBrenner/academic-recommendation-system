@@ -3,31 +3,28 @@ import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
 import type { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
 import { useEffect, useState } from "react";
-import bibliographyContent from "./bibliography.txt?raw";
-import instructionsContent from "./instructions.txt?raw";
+import { toast } from "react-toastify";
+import instructions from "./instructions.txt?raw";
 import userContent from "./user.txt?raw";
 
 export const useGetRecommendations = (files: Array<{ id: string }>) => {
 	const [threadId, setThreadId] = useState("");
+	const [assistantId, setAssistantId] = useState("");
 
 	useEffect(() => {
-		const createThread = async () => {
-			const thread = await openai.beta.threads.create({
-				messages: [
-					{
-						role: "assistant",
-						content: instructionsContent,
-					},
-					{
-						role: "assistant",
-						content: bibliographyContent,
-					},
-				],
-			});
+		const load = async () => {
+			const thread = await openai.beta.threads.create();
 			setThreadId(thread.id);
+			const assistant = await openai.beta.assistants.create({
+				name: "Recommendation Assistant",
+				instructions,
+				tools: [{ type: "code_interpreter" }],
+				model: "gpt-4o-mini",
+			});
+			setAssistantId(assistant.id);
 		};
 
-		createThread();
+		load();
 	}, []);
 
 	const { isFetching, refetch } = useQuery<IGptResponse>({
@@ -43,7 +40,7 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 			});
 
 			const run = await openai.beta.threads.runs.createAndPoll(threadId, {
-				assistant_id: import.meta.env.VITE_OPENAI_ASSISTANT_ID,
+				assistant_id: assistantId,
 			});
 
 			if (run.status === "completed") {
@@ -56,9 +53,11 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
 					if (text.includes("recommendations")) return JSON.parse(text);
 
 					throw new Error(text);
-				} catch (error) {
-					console.log("error: ", error);
-					throw new Error("Erro na conversão dos dados para json!");
+				} catch (error: any) {
+					console.error(error);
+					toast.error(
+						"Houve um erro ao gerar as recomendações. Consulte o desenvolvedor!",
+					);
 				}
 			}
 
