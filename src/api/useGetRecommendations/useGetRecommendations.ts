@@ -2,69 +2,50 @@ import type { IGptResponse } from "@interfaces";
 import { openai } from "@services";
 import { useQuery } from "@tanstack/react-query";
 import type { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
-import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import instructions from "./instructions.txt?raw";
 import userContent from "./user.txt?raw";
 
 export const useGetRecommendations = (files: Array<{ id: string }>) => {
-	const [threadId, setThreadId] = useState("");
-	const [assistantId, setAssistantId] = useState("");
+  const { isFetching, refetch } = useQuery<IGptResponse>({
+    queryKey: ["recommendations"],
+    queryFn: async () => {
+      const thread = await openai.beta.threads.create();
 
-	useEffect(() => {
-		const load = async () => {
-			const thread = await openai.beta.threads.create();
-			setThreadId(thread.id);
-			const assistant = await openai.beta.assistants.create({
-				name: "Recommendation Assistant",
-				instructions,
-				tools: [{ type: "code_interpreter" }],
-				model: "gpt-4o-mini",
-			});
-			setAssistantId(assistant.id);
-		};
+      await openai.beta.threads.messages.create(thread.id, {
+        role: "user",
+        content: userContent,
+        attachments: files.map((file) => ({
+          file_id: file.id,
+          tools: [{ type: "code_interpreter" }],
+        })),
+      });
 
-		load();
-	}, []);
+      const run = await openai.beta.threads.runs.createAndPoll(thread.id, {
+        assistant_id: import.meta.env.VITE_OPENAI_ASSISTANT_ID,
+      });
 
-	const { isFetching, refetch } = useQuery<IGptResponse>({
-		queryKey: ["recommendations"],
-		queryFn: async () => {
-			await openai.beta.threads.messages.create(threadId, {
-				role: "user",
-				content: userContent,
-				attachments: files.map((file) => ({
-					file_id: file.id,
-					tools: [{ type: "code_interpreter" }],
-				})),
-			});
+      if (run.status === "completed") {
+        const messages = await openai.beta.threads.messages.list(run.thread_id);
 
-			const run = await openai.beta.threads.runs.createAndPoll(threadId, {
-				assistant_id: assistantId,
-			});
+        try {
+          const text =
+            (messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
 
-			if (run.status === "completed") {
-				const messages = await openai.beta.threads.messages.list(run.thread_id);
+          if (text.includes("recommendations")) return JSON.parse(text);
 
-				try {
-					const text =
-						(messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
+          throw new Error(text);
+        } catch (error: any) {
+          console.error(error);
+          toast.error(
+            "Houve um erro ao gerar as recomendações. Consulte o desenvolvedor!"
+          );
+        }
+      }
 
-					if (text.includes("recommendations")) return JSON.parse(text);
+      return {} as IGptResponse;
+    },
+    enabled: false,
+  });
 
-					throw new Error(text);
-				} catch (error: any) {
-					console.error(error);
-					toast.error(
-						"Houve um erro ao gerar as recomendações. Consulte o desenvolvedor!",
-					);
-				}
-			}
-
-			return {} as IGptResponse;
-		},
-		enabled: false,
-	});
-
-	return { isFetching, refetch };
+  return { isFetching, refetch };
 };

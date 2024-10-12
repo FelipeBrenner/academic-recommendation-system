@@ -3,38 +3,42 @@ import type { FileObject } from "openai/resources/files.mjs";
 import { useEffect, useState } from "react";
 
 export const useFiles = () => {
-	const [files, setFiles] = useState<Array<FileObject>>([]);
+  const [files, setFiles] = useState<Array<FileObject>>([]);
 
-	const loadFiles = () => {
-		list().then((response) => {
-			setFiles(response.data);
-		});
-	};
+  const loadFiles = () => {
+    list().then((response) => {
+      // setFiles(response.data);
+      setFiles([
+        { id: "file-OXQB3t8vxgy5AYhKj6M4Ioz6" } as FileObject,
+        { id: "file-dsOhO1U79whCcoVqLsxAgmr8" } as FileObject,
+      ]);
+    });
+  };
 
-	useEffect(() => {
-		loadFiles();
-	}, []);
+  useEffect(() => {
+    loadFiles();
+  }, []);
 
-	const create = async (path: string) => {
-		await openai.files.create({
-			file: new File([path], "file"),
-			purpose: "assistants",
-		});
+  const create = async (path: string) => {
+    await openai.files.create({
+      file: new File([path], "file"),
+      purpose: "assistants",
+    });
 
-		loadFiles();
-	};
+    loadFiles();
+  };
 
-	const list = async () => {
-		const list = await openai.files.list();
+  const list = async () => {
+    const list = await openai.files.list();
 
-		return list;
-	};
+    return list;
+  };
 
-	const del = async (fileId: string) => {
-		await openai.files.del(fileId);
+  const del = async (fileId: string) => {
+    await openai.files.del(fileId);
 
-		loadFiles();
-	};
+    loadFiles();
+  };
 
-	return { files, create, del };
+  return { files, create, del };
 };

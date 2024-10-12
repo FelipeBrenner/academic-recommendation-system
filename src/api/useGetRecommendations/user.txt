@@ -1,21 +1,19 @@
 Segue em anexo informações sobre mim, para você as utilizar para personalização conforme as instruções para o assistant.
 
-Quanto a um PDF com histórico escolar do curso de Ciência da Computação da Unisinos, você pode usar essa técnica abaixo para extração do texto, para ler as linhas com as disciplinas e notas.
+Tente abrir arquivo por arquivo. Se não foi possível abrir como json, tente abrir como pdf. Só então, passe para o próximo arquivo.
 
-with pdfplumber.open(file_path_2) as pdf:
-    all_text = ""
-    for page in pdf.pages:
-        # Pegando cada linha de texto e adicionando ao resultado
-        all_text += page.extract_text() + "\n"
-
-Se o arquivo inputado for um json, é essa técnica que você deve utilizar para extrair as informações:
+Técnica para JSON:
 
 import json
 
-# Tentar carregar o arquivo como JSON
-file_path_ementas_json = '/mnt/data/file-FRLrxhBokOhxSSD5b77xgi1Q'
-
-with open(file_path_ementas_json, 'r') as file:
+with open(file_path, 'r') as file:
     ementas_data = json.load(file)
 
 ementas_data
+
+Técnica para PDF:
+
+with pdfplumber.open(file_path) as pdf:
+    all_text = ""
+    for page in pdf.pages:
+        all_text += page.extract_text() + "\n"
