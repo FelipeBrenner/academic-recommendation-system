@@ -1,51 +1,52 @@
 export interface IUser {
-	id: string;
-	avatar?: string;
-	email: string;
-	name: string;
-	[key: string]: any;
+  id: string;
+  avatar?: string;
+  email: string;
+  name: string;
+  [key: string]: any;
 }
 
 export interface IRecommendation {
-	titulo: string;
-	descricao: string;
-	subject?: string;
+  titulo: string;
+  descricao: string;
+  subject?: string;
 }
 
 export interface IRecommendations {
-	metodo_pomodoro: IRecommendation;
-	matriz_de_eisenhower: IRecommendation;
-	tecnica_de_time_blocking: IRecommendation;
-	estabelecimento_de_metas: IRecommendation;
-	regra_dos_dois_minutos: IRecommendation;
-	mapas_mentais: IRecommendation;
-	autoquestionamento: IRecommendation;
-	tecnica_sq3r: IRecommendation;
-	diarios_de_aprendizagem: IRecommendation;
-	organizadores_graficos: IRecommendation;
+  metodo_pomodoro: IRecommendation;
+  matriz_de_eisenhower: IRecommendation;
+  tecnica_de_time_blocking: IRecommendation;
+  estabelecimento_de_metas: IRecommendation;
+  regra_dos_dois_minutos: IRecommendation;
+  mapas_mentais: IRecommendation;
+  autoquestionamento: IRecommendation;
+  tecnica_sq3r: IRecommendation;
+  diarios_de_aprendizagem: IRecommendation;
+  organizadores_graficos: IRecommendation;
 }
 
 export interface ISubject {
-	name: string;
-	grade: number;
+  name: string;
+  grade: number | string;
+  semester: string;
 }
 
 export interface IGptResponse {
-	recommendations: IRecommendations;
-	academic_history?: Array<ISubject>;
+  recommendations: IRecommendations;
+  academic_history?: Array<ISubject>;
 }
 
 export interface ICalendarEvent {
-	id: string;
-	color?: string;
-	description: string;
-	end: number;
-	start: number;
-	title: string;
-	userId: string;
+  id: string;
+  color?: string;
+  description: string;
+  end: number;
+  start: number;
+  title: string;
+  userId: string;
 }
 
 export interface IEventColor {
-	userId: string;
-	color: string;
+  userId: string;
+  color: string;
 }

@@ -1,3 +1,3 @@
 export * from "./events/events";
-export * from "./recommendations/recommendations";
+export * from "./gptResponse/gptResponse";
 export * from "./users/users";

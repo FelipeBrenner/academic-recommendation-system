@@ -8,3 +8,5 @@ export * from "./SplashScreen/SplashScreen";
 export * from "./ThemeButton/ThemeButton";
 export * from "./Toast/Toast";
 export * from "./UsersButton/UsersButton";
+export * from "./Scrollbar/Scrollbar";
+export * from "./AcademicHistory/AcademicHistory";

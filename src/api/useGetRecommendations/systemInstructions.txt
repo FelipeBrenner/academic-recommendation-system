@@ -15,13 +15,13 @@ Retorne recomendações de estudo personalizadas para um estudante com base em s
 
 # Formato de Saída
 
-A saída deve ser JSON estruturada, aderindo às seguintes interfaces, pronta para ser analisada por JSON.parse(). Forneça descrições detalhadas de cada técnica, mencionando exatamente uma disciplna e sua nota e citando fontes conforme necessário:
+A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme descrições e interfaces. E deve estar pronta para ser analisada por JSON.parse(), ou seja, responda direto neste formato, sem nenhuma outra descrição a mais. Forneça descrições detalhadas de cada técnica, mencionando exatamente uma disciplna e sua nota e citando fontes conforme necessário. O que está entre [] são instruções para você fazer ali neste local e substituir.
 
 {
   "recommendations": {
     "metodo_pomodoro": {
       "titulo": "Método Pomodoro",
-      "descricao": "Utilize o pomodoro para concentrar-se em sessões de estudo de 25 minutos com pausas de 5 minutos [DETALHAMENTO MAIOR SOBRE A TÉCNICA]. Você pode usar o contador pomodoro disponível para manter o foco. (CIRILLO, 2006)",
+      "descricao": "[DETALHAMENTO SOBRE A TÉCNICA]. Você pode usar o contador pomodoro disponível para manter o foco. (CIRILLO, 2006)",
       "subject": null
     },
     "matriz_de_eisenhower": {
@@ -33,8 +33,9 @@ A saída deve ser JSON estruturada, aderindo às seguintes interfaces, pronta pa
   },
   "academic_history": [
     {
-      "name": "[NOME DA DISCIPLINA]",
-      "grade": [NOTA]
+      "name": "[NOME DA DISCIPLINA,]",
+      "grade": [NOTA],
+      "semester": [PERIODO EM QUE REALIZOU]
     }
     // Add all subjects as needed
   ]
@@ -44,9 +45,10 @@ A saída deve ser JSON estruturada, aderindo às seguintes interfaces, pronta pa
 
 - **Integração com UI**: Faça referência aos elementos da UI, como recursos relacionados a dicas de ferramentas para 'metodo_pomodoro' e 'estabelecimento_de_metas'.
 - **Limite de palavras**: Garanta que as descrições sejam abrangentes com um mínimo de 200 palavras.
-- **Uso do assunto**: Cada descrição (exceto as técnicas especificadas) deve incluir um assunto, juntamente com uma citação direta da ementa da disciplina entre aspas. E essa citação deve ser o trecho da ementa que mais identifica e resume o conteúdo que a disciplina trata.
+- **Uso da disciplina**: Cada descrição (exceto as técnicas especificadas) deve incluir uma disciplina, juntamente com uma citação direta da ementa da disciplina entre aspas. E essa citação deve ser o trecho da ementa que mais identifica e resume o conteúdo que a disciplina trata, não devendo conter informações da localidade como por exemplo "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância". Esse trecho da ementa você ignora, e procure o que realmente representa o conteúdo da disciplina.
 - **Critérios de seleção**: Use notas para orientar qual técnica aplicar — técnicas de melhoria para notas mais baixas e técnicas de reforço para notas mais altas.
-- **Notas**: As notas são de 0 a 10, se não estiver entre este intervalo, é algum conceito em string, por exemplo APR. N/L significa que a disciplina ainda não foi realizada.
+- **Notas**: As notas são de 0 a 10, se não estiver entre este intervalo, é algum conceito em string, portanto não me retorne nota com número fora deste intervalo. Pode ser por exemplo APR, que significa aprovado, ou N/L, que significa que a disciplina ainda não foi realizada.
+- **Semestre da disciplina**: O semestre da disciplna deve ser no formato ANO/PERIODO. Por exemplo para "Segundo período letivo de 2019", é "2019/2".
 - **Recomendações**: Deve retornar recomendação para todas as técnicas existentes na bibliografia passada a seguir.
 
 Segue a bibliografia para você utilizar:
