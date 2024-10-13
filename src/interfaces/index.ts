@@ -34,6 +34,7 @@ export interface ISubject {
 export interface IGptResponse {
   recommendations: IRecommendations;
   academic_history?: Array<ISubject>;
+  lastUpdated?: string;
 }
 
 export interface ICalendarEvent {

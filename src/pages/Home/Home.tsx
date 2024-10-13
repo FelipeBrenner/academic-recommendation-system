@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import * as Styles from "./Home.styles";
 import { gptResponseDatabase } from "@database";
 import { useGptResponse } from "@hooks";
+import { getFormattedCurrentDate } from "@utils";
 
 export const Home = () => {
   const { user } = useAuth();
@@ -15,8 +16,13 @@ export const Home = () => {
   const { gptResponse, setGptResponse } = useGptResponse();
 
   const handleClick = () => {
-    refetch().then(({ data: gptResponse }) => {
-      if (gptResponse?.recommendations) {
+    refetch().then(({ data }) => {
+      if (data?.recommendations) {
+        const gptResponse = {
+          ...data,
+          lastUpdated: `Dados coletados e analisados em: ${getFormattedCurrentDate()}`,
+        };
+
         toast.success("Recomendações geradas com sucesso!");
         setGptResponse(gptResponse);
         gptResponseDatabase.updateGptResponse({

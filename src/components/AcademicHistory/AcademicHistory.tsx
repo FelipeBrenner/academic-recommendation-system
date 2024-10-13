@@ -16,7 +16,15 @@ interface IAcademicHistory {
 }
 
 export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
-  const { recommendations = {}, academic_history = [] } = gptResponse || {};
+  const {
+    recommendations = {},
+    academic_history = [],
+    lastUpdated,
+  } = gptResponse || {};
+
+  const recommendationsArray = Object.values<IRecommendation>(recommendations);
+  const recommendationsLength =
+    recommendationsArray.length > 2 ? recommendationsArray.length - 2 : 0;
 
   if (academic_history.length === 0)
     return (
@@ -26,47 +34,57 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
     );
 
   return (
-    <Card>
-      <Scrollbar>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Nome da Disciplina</TableCell>
-              <Styles.TableCellCentered>Período</Styles.TableCellCentered>
-              <Styles.TableCellCentered>
-                Avaliação Final
-              </Styles.TableCellCentered>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {academic_history.map((subject) => {
-              const recommendation = Object.values<IRecommendation>(
-                recommendations
-              ).find((r) => r.subject === subject.name);
+    <Styles.Wrapper>
+      <Styles.Header>
+        <Typography variant="body2">{`Segue seu histórico acadêmico dado como entrada, juntamente com ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma!\nAo lado você tem um recurso onde pode aplicar a técnica de Pomodoro e, em uma nova página disponibilizada, outro recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
+      </Styles.Header>
+      <Card>
+        <Scrollbar>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Nome da Disciplina</TableCell>
+                <Styles.TableCellCentered>Período</Styles.TableCellCentered>
+                <Styles.TableCellCentered>
+                  Avaliação Final
+                </Styles.TableCellCentered>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {academic_history.map((subject) => {
+                const recommendation = recommendationsArray.find(
+                  (r) => r.subject === subject.name
+                );
 
-              return (
-                <TableRow
-                  key={subject.name}
-                  sx={{
-                    "&:last-child td": {
-                      border: 0,
-                    },
-                  }}
-                >
-                  <TableCell>{subject.name}</TableCell>
-                  <Styles.TableCellCentered>
-                    {subject.semester}
-                  </Styles.TableCellCentered>
-                  <Styles.TableCellCentered>
-                    {subject.grade}
-                    <RecommendationTooltip recommendation={recommendation} />
-                  </Styles.TableCellCentered>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </Scrollbar>
-    </Card>
+                return (
+                  <TableRow
+                    key={subject.name}
+                    sx={{
+                      "&:last-child td": {
+                        border: 0,
+                      },
+                    }}
+                  >
+                    <TableCell>{subject.name}</TableCell>
+                    <Styles.TableCellCentered>
+                      {subject.semester}
+                    </Styles.TableCellCentered>
+                    <Styles.TableCellCentered>
+                      {subject.grade}
+                      <RecommendationTooltip recommendation={recommendation} />
+                    </Styles.TableCellCentered>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Scrollbar>
+      </Card>
+      <Styles.Footer>
+        <Typography variant="caption" color="gray">
+          {lastUpdated}
+        </Typography>
+      </Styles.Footer>
+    </Styles.Wrapper>
   );
 };
