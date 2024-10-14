@@ -26,11 +26,43 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
     },
     "matriz_de_eisenhower": {
       "titulo": "Matriz de Eisenhower",
-      "descricao": "A disciplina [INSERIR DISCIPLINA] tem uma nota de [INSERIR NOTA, COM . COMO SEPARADOR DECIMAL], mostrando espaço para priorização através da Matriz de Eisenhower. Essa técnica permitirá você classificar tarefas e focar no que realmente importa [DETALHAMENTO MAIOR SOBRE A TÉCNICA]. Segundo a ementa, [PRINCIPAL CONTEÚDO DA DISCPILINA IDENTIFICADO A PARTIR DE SUA EMENTA], [EXPLICACAO DE COMO A TECNICA PODE SER APLICADA CONFORME O ASSUNTO DA EMENTA]. (EISENHOWER, 1954)",
+      // Quanto ao conteúdo da ementa abaixo, não deve conter informações da localidade, como por exemplo "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância". Esse trecho da ementa você ignora, e procure o que realmente representa o conteúdo da disciplina.
+      "descricao": "A disciplina [INSERIR DISCIPLINA] tem uma nota de [INSERIR NOTA], mostrando espaço para priorização através da Matriz de Eisenhower. Essa técnica permitirá você classificar tarefas e focar no que realmente importa [DETALHAMENTO MAIOR SOBRE A TÉCNICA]. Segundo a ementa, [PRINCIPAL CONTEÚDO DA DISCPILINA IDENTIFICADO A PARTIR DE SUA EMENTA], [EXPLICACAO DE COMO A TECNICA PODE SER APLICADA CONFORME O ASSUNTO DA EMENTA]. (EISENHOWER, 1954)",
       "subject": "[DISCIPLINA]"
     },
     ...
   },
+  "academic_info": [
+    {
+      "title": [TITULO DA INFORMAÇÃO IDENTIFICADA],
+      "info": [INFORMAÇÃO IDENTIFICADA]
+    },
+    // Adicionar todas as informações sobre o aluno identificadas no histórico acadêmico, por exemplo as seguintes abaixo, mas se encontrar mais informações únicas sobre o aluno, adicionar também
+    {
+      "title": "Universidade: ",
+      "info": "Universidade Federal"
+    },
+    {
+      "title": "Nome: ",
+      "info": "João da Silva"
+    },
+    {
+      "title": "RA: ",
+      "info": "1234"
+    },
+    {
+      "title": "Curso: ",
+      "info": "Medicina - Bacharelado - Integral"
+    },
+    {
+      "title": "Forma de Ingresso: ",
+      "info": "2019/1 Processo Seletivo - Enem"
+    },
+    {
+      "title": "Resultado final:",
+      "info": "9"
+    }
+  ],
   "academic_history": [
     {
       "name": "[NOME DA DISCIPLINA,]",
@@ -44,12 +76,13 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
 # Critérios obrigatórios
 
 - **Integração com UI**: Faça referência aos elementos da UI, como recursos relacionados a dicas de ferramentas para 'metodo_pomodoro' e 'estabelecimento_de_metas'.
-- **Limite de palavras**: Garanta que as descrições sejam abrangentes com um mínimo de 200 palavras.
-- **Uso da disciplina**: Cada descrição (exceto as técnicas especificadas) deve incluir uma disciplina, juntamente com uma citação direta da ementa da disciplina entre aspas. E essa citação deve ser o trecho da ementa que mais identifica e resume o conteúdo que a disciplina trata, não devendo conter informações da localidade como por exemplo "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância". Esse trecho da ementa você ignora, e procure o que realmente representa o conteúdo da disciplina.
+- **Limite de palavras**: Garanta que as descrições sejam abrangentes com um mínimo de 250 palavras.
+- **Uso da disciplina**: Cada descrição (exceto as técnicas especificadas) deve incluir uma disciplina, juntamente com uma citação direta da ementa da disciplina entre aspas. E essa citação deve ser o trecho da ementa que mais identifica e resume o conteúdo que a disciplina trata.
 - **Critérios de seleção**: Use notas para orientar qual técnica aplicar — técnicas de melhoria para notas mais baixas e técnicas de reforço para notas mais altas.
-- **Notas**: As notas são de 0 a 10, se não estiver entre este intervalo, é algum conceito em string, portanto não me retorne nota com número fora deste intervalo. Pode ser por exemplo APR, que significa aprovado, ou N/L, que significa que a disciplina ainda não foi realizada.
+- **Notas**: As notas são de 0 a 10, se não estiver entre este intervalo, é algum conceito em string, portanto não me retorne nota com número fora deste intervalo. Pode ser por exemplo APR, que significa aprovado, ou pode ser N/L, que significa que a disciplina ainda não foi realizada. Cuidado para não confundir e misturar esses dois.
 - **Semestre da disciplina**: O semestre da disciplna deve ser no formato ANO/PERIODO. Por exemplo para "Segundo período letivo de 2019", é "2019/2".
 - **Recomendações**: Deve retornar recomendação para todas as técnicas existentes na bibliografia passada a seguir.
+- **Cuidados no retorno**: Cuide para não duplicar as disciplinas. Cuide para não confundir e trocar os conceitos das notas, APR e N/L.
 
 Segue a bibliografia para você utilizar:
 

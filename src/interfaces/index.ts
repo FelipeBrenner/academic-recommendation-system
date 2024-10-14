@@ -31,9 +31,15 @@ export interface ISubject {
   semester: string;
 }
 
+export interface IAcademicInfo {
+  title: string;
+  info: string;
+}
+
 export interface IGptResponse {
   recommendations: IRecommendations;
-  academic_history?: Array<ISubject>;
+  academic_history: Array<ISubject>;
+  academic_info: Array<IAcademicInfo>;
   lastUpdated?: string;
 }
 

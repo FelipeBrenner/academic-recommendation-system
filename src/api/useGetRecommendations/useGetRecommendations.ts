@@ -24,22 +24,28 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
         assistant_id: import.meta.env.VITE_OPENAI_ASSISTANT_ID,
       });
 
-      if (run.status === "completed") {
-        const messages = await openai.beta.threads.messages.list(run.thread_id);
+      try {
+        if (run.status === "completed") {
+          const messages = await openai.beta.threads.messages.list(
+            run.thread_id
+          );
 
-        try {
           const text =
             (messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
 
           if (text.includes("recommendations")) return JSON.parse(text);
 
           throw new Error(text);
-        } catch (error: any) {
-          console.error(error);
-          toast.error(
-            "Houve um erro ao gerar as recomendações. Consulte o desenvolvedor!"
-          );
         }
+
+        if (run.status === "failed") {
+          throw new Error(run.last_error?.message);
+        }
+      } catch (error: any) {
+        console.error(error);
+        toast.error(
+          "Houve um erro ao gerar as recomendações. Contate o desenvolvedor!"
+        );
       }
 
       return {} as IGptResponse;

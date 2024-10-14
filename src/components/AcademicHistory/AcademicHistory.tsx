@@ -19,6 +19,7 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
   const {
     recommendations = {},
     academic_history = [],
+    academic_info = [],
     lastUpdated,
   } = gptResponse || {};
 
@@ -35,8 +36,20 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
 
   return (
     <Styles.Wrapper>
+      {academic_info.length > 0 && (
+        <Styles.InfoCard>
+          {academic_info.map(({ title, info }) => (
+            <Styles.InfoCardRow key={title}>
+              <Typography variant="body2" fontWeight="bold">
+                {title}
+              </Typography>
+              <Typography variant="body2">{info}</Typography>
+            </Styles.InfoCardRow>
+          ))}
+        </Styles.InfoCard>
+      )}
       <Styles.Header>
-        <Typography variant="body2">{`Segue seu histórico acadêmico dado como entrada, juntamente com ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma!\nAo lado você tem um recurso onde pode aplicar a técnica de Pomodoro e, em uma nova página disponibilizada, outro recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
+        <Typography variant="body2">{`Segue seu histórico acadêmico dado como entrada, juntamente com ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma!\nNesta mesma página você tem um recurso onde pode aplicar a técnica de Pomodoro e, em uma nova página disponibilizada, outro recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
       </Styles.Header>
       <Card>
         <Scrollbar>

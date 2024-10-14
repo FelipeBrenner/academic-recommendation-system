@@ -1,4 +1,4 @@
-PRIORIZAR:
+Priorizações vistas em call com a orientadora:
 
 1.
 - Pesquisar input de pdf na api, e implementar para a geração dos dados do usuário, e no fim do TCC não ficar com dados simulados.
@@ -10,3 +10,8 @@ PRIORIZAR:
   - Definir matriz de critérios de o que é desempenho ruim e bom. Categorizar faixa de notas. Associar, fazer tal tecnica para melhorar tal ponto por conta do que vem pela frente.
 - Melhorar a análise e recomendações de atividades futuras, linkando com as notas ruins e boas, e dizendo o que, no que ainda está por vir pra ele, ele tem que focar mais, ter mais atenção.
 - Exibir na home dados do usuário, cadeiras atuais por exemplo. Sugerir conteúdos.
+
+TO DO YET:
+
+[ ] Input de PDF, para o histórico acadêmico
+[ ] Exibir acima da tabela mais dados do aluno que têm também no histórico acadêmico
