@@ -46,7 +46,14 @@ export const Home = () => {
   return (
     <Styles.Container maxWidth="xl">
       <Grid container spacing={3}>
-        <Grid item sm={12} md>
+        <Grid
+          item
+          sm={12}
+          md
+          style={{
+            overflow: "auto",
+          }}
+        >
           <AcademicHistory gptResponse={gptResponse} />
         </Grid>
         <Grid item sm={12} md="auto">

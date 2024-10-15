@@ -1,8 +1,6 @@
 import { Card, styled, TableCell, Typography } from "@mui/material";
 
-export const Wrapper = styled("div")(() => ({
-  width: "calc(100% - 32px)",
-}));
+export const Wrapper = styled("div")(() => ({}));
 
 export const Header = styled("div")(() => ({
   display: "flex",
