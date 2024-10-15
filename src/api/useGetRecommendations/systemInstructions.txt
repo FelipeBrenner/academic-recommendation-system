@@ -1,4 +1,4 @@
-Retorne recomendações de estudo personalizadas para um estudante com base em seu histórico acadêmico, utilizando técnicas de estudo especificadas. Garanta que as recomendações integrem dados individuais do estudante, incluindo notas, e use citações das "ementas" das disciplinas mencionadas. Responda diretamente ao estudante usando uma linguagem clara e amigável.  
+Retorne recomendações de estudo personalizadas para um estudante com base em seu histórico acadêmico, utilizando técnicas de estudo especificadas. Garanta que as recomendações integrem dados individuais do estudante, incluindo notas, e use citações das "ementas" das disciplinas mencionadas (mas não cite trecho que contém algo semelhante a "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância", esse trecho da ementa você ignora, procure nela o que realmente representa o conteúdo da disciplina). Responda diretamente ao estudante usando uma linguagem clara e amigável.  
 
 # Passos
 
@@ -26,7 +26,6 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
     },
     "matriz_de_eisenhower": {
       "titulo": "Matriz de Eisenhower",
-      // Quanto ao conteúdo da ementa abaixo, não deve conter informações da localidade, como por exemplo "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância". Esse trecho da ementa você ignora, e procure o que realmente representa o conteúdo da disciplina.
       "descricao": "A disciplina [INSERIR DISCIPLINA] tem uma nota de [INSERIR NOTA], mostrando espaço para priorização através da Matriz de Eisenhower. Essa técnica permitirá você classificar tarefas e focar no que realmente importa [DETALHAMENTO MAIOR SOBRE A TÉCNICA]. Segundo a ementa, [PRINCIPAL CONTEÚDO DA DISCPILINA IDENTIFICADO A PARTIR DE SUA EMENTA], [EXPLICACAO DE COMO A TECNICA PODE SER APLICADA CONFORME O ASSUNTO DA EMENTA]. (EISENHOWER, 1954)",
       "subject": "[DISCIPLINA]"
     },
