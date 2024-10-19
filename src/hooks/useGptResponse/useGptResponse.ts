@@ -18,7 +18,7 @@ export const useGptResponse = () => {
       setGptResponse(gptResponse);
     };
 
-    load();
+    if (user) load();
   }, [user]);
 
   return {
