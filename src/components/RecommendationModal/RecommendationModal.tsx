@@ -22,7 +22,7 @@ const recommendationsTexts = {
   true: {
     button: "Gerar as recomendações novamente",
     description:
-      "Entendemos que pode ter ocorrido erro de análise dos dados por parte da inteligência artificial, é comum. Portanto, pode gerar as recomendações novamente a partir do mesmo histórico escolar, até estar satisfeito com seus resultados.",
+      "Pode ter ocorrido algum erro de análise de dados ou na leitura do PDF por parte da inteligência artificial. Portanto, gere as recomendações novamente a partir do mesmo histórico escolar, a fim de não houver erros.",
     success: "Recomendações geradas novamente com sucesso!",
   },
 };
@@ -101,6 +101,9 @@ export const RecommendationModal = ({
   };
 
   const handleClose = () => {
+    if (!isLoading) {
+      setFile(null);
+    }
     setIsOpen(false);
   };
 
