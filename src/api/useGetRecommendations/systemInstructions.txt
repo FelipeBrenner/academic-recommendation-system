@@ -78,7 +78,7 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
 - **Limite de palavras**: Garanta que as descrições sejam abrangentes com um mínimo de 250 palavras.
 - **Uso da disciplina**: Cada descrição (exceto as técnicas especificadas) deve incluir uma disciplina, juntamente com uma citação direta da ementa da disciplina entre aspas. E essa citação deve ser o trecho da ementa que mais identifica e resume o conteúdo que a disciplina trata.
 - **Critérios de seleção**: Use notas para orientar qual técnica aplicar — técnicas de melhoria para notas mais baixas e técnicas de reforço para notas mais altas.
-- **Notas**: As notas são de 0 a 10, se não estiver entre este intervalo, é algum conceito em string, portanto não me retorne nota com número fora deste intervalo. Pode ser por exemplo APR, que significa aprovado, ou pode ser N/L, que significa que a disciplina ainda não foi realizada. Cuidado para não confundir e misturar esses dois.
+- **Notas**: As notas são de 0 a 10, se não estiver entre este intervalo, é algum conceito em string, portanto não me retorne nota com número fora deste intervalo. Pode ser por exemplo APR, que significa que já concluiu a disciplina e foi aprovado, ou pode ser N/L, que significa que a disciplina ainda não foi realizada. Cuidado para não confundir e misturar esses dois.
 - **Semestre da disciplina**: O semestre da disciplna deve ser no formato ANO/PERIODO. Por exemplo para "Segundo período letivo de 2019", é "2019/2".
 - **Recomendações**: Deve retornar recomendação para todas as técnicas existentes na bibliografia passada a seguir.
 - **Cuidados no retorno**: Cuide para não duplicar as disciplinas. Cuide para não confundir e trocar os conceitos das notas, APR e N/L.
