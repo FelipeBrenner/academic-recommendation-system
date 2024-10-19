@@ -23,18 +23,7 @@ export const Avatar = styled(MuiAvatar)(({ theme }) => ({
   fontSize: theme.typography.h5.fontSize,
 }));
 
-export const InputCpf = styled(TextField)(({ theme }) => ({
-  width: "100%",
-  "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button": {
-    WebkitAppearance: "none",
-    margin: 0,
-  },
-  "input[type=number]": {
-    MozAppearance: "textField",
-  },
-}));
-
-export const InputEmail = styled(TextField)(({ theme }) => ({
+export const InputEmail = styled(TextField)(() => ({
   width: "100%",
   "& .MuiOutlinedInput-notchedOutline": {
     borderStyle: "dashed",

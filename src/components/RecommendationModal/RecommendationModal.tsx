@@ -22,7 +22,7 @@ const recommendationsTexts = {
   true: {
     button: "Gerar as recomendações novamente",
     description:
-      "Pode ter ocorrido algum erro de análise de dados ou na leitura do PDF por parte da inteligência artificial. Portanto, gere as recomendações novamente a partir do mesmo histórico escolar, a fim de não houver erros.",
+      "Pode ter ocorrido algum erro de análise de dados ou na leitura do PDF por parte da inteligência artificial. Portanto, gere as recomendações novamente a partir do mesmo histórico escolar, a fim de não houver mais erros.",
     success: "Recomendações geradas novamente com sucesso!",
   },
 };

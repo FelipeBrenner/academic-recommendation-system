@@ -66,7 +66,7 @@ const error = {
 const text = {
   primary: "#e6e6e6",
   secondary: "#b3b3b3",
-  disabled: "rgba(255, 255, 255, 0.48)",
+  disabled: "rgba(128, 128, 128, 0.48)",
 };
 
 export const darkThemeOptions: ThemeOptions = {
