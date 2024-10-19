@@ -40,7 +40,7 @@ export const RecommendationModal = ({
   const [file, setFile] = useState<FileWithPath | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [toastLoadingId, setToastLoadingId] = useState<Id>();
-  const { user } = useAuth();
+  const { user, updateUser } = useAuth();
   const { create } = useFiles();
   const { mutate } = useGetRecommendations();
 
@@ -79,7 +79,7 @@ export const RecommendationModal = ({
               userId: user!.id,
               gptResponse,
             });
-
+            updateUser({ generations: user!.generations + 1 });
             handleFinish();
             toast.success(texts.success);
             handleClose();
