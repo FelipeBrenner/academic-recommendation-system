@@ -10,3 +10,5 @@ export * from "./Toast/Toast";
 export * from "./UsersButton/UsersButton";
 export * from "./Scrollbar/Scrollbar";
 export * from "./AcademicHistory/AcademicHistory";
+export * from "./Dropzone/Dropzone";
+export * from "./RecommendationModal/RecommendationModal";

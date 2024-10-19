@@ -1,14 +1,13 @@
 import type { IGptResponse } from "@interfaces";
 import { openai } from "@services";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import type { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
 import { toast } from "react-toastify";
 import userContent from "./user.txt?raw";
 
-export const useGetRecommendations = (files: Array<{ id: string }>) => {
-  const { isFetching, refetch } = useQuery<IGptResponse>({
-    queryKey: ["recommendations"],
-    queryFn: async () => {
+export const useGetRecommendations = () => {
+  const { mutate } = useMutation({
+    mutationFn: async (files: Array<{ id: string }>): Promise<IGptResponse> => {
       const thread = await openai.beta.threads.create();
 
       await openai.beta.threads.messages.create(thread.id, {
@@ -43,15 +42,15 @@ export const useGetRecommendations = (files: Array<{ id: string }>) => {
         }
       } catch (error: any) {
         console.error(error);
+        toast.dismiss();
         toast.error(
-          "Houve um erro ao gerar as recomendações. Contate o desenvolvedor!"
+          "Houve um erro ao gerar as recomendações. Tente gerar novamente e, se o erro persistir, contate o desenvolvedor!"
         );
       }
 
       return {} as IGptResponse;
     },
-    enabled: false,
   });
 
-  return { isFetching, refetch };
+  return { mutate };
 };

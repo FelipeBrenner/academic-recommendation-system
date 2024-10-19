@@ -15,9 +15,7 @@ export const useGptResponse = () => {
   useEffect(() => {
     const load = async () => {
       const gptResponse = await gptResponseDatabase.getGptResponse(user!.id);
-      if (gptResponse) {
-        setGptResponse(gptResponse);
-      }
+      setGptResponse(gptResponse);
     };
 
     load();

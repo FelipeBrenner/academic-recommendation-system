@@ -27,12 +27,7 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
   const recommendationsLength =
     recommendationsArray.length > 2 ? recommendationsArray.length - 2 : 0;
 
-  if (academic_history.length === 0)
-    return (
-      <Typography variant="h6">
-        Dê entrada com seus dados e gere as recomendações!
-      </Typography>
-    );
+  if (academic_history.length === 0) return null;
 
   return (
     <Styles.Wrapper>
