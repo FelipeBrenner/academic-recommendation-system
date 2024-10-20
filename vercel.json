@@ -2,7 +2,7 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "headers": [
     {
-      "source": "https://acad-rec-sys.firebaseapp.com",
+      "source": "https://acad-rec-sys.firebaseapp.com/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "source": "https://acad-rec-sys.web.app",
+      "source": "https://acad-rec-sys.web.app/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
