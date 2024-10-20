@@ -2,7 +2,7 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "headers": [
     {
-      "source": "https://academic-recommendation-system.vercel.app",
+      "source": "acad-rec-sys.appspot.com",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
