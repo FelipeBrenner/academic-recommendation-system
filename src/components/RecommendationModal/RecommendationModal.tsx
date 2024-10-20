@@ -1,10 +1,10 @@
-import { type Dispatch, useState } from "react";
+import { type Dispatch, useEffect, useState } from "react";
 import { Modal, Typography } from "@mui/material";
 import * as Styles from "./RecommendationModal.styles";
 import { Dropzone } from "@components";
 import { useFiles, useGetRecommendations } from "@api";
 import { type Id, toast } from "react-toastify";
-import { getFormattedCurrentDate } from "@utils";
+import { getCoefficient, getFormattedCurrentDate } from "@utils";
 import type { IGptResponse } from "@interfaces";
 import { gptResponseDatabase } from "@database";
 import { useAuth } from "@contexts";
@@ -16,13 +16,13 @@ const recommendationsTexts = {
   false: {
     button: "Gerar recomendações",
     description:
-      "Olá, espero que você seja um aluno de Ciência da Computação da Unisinos, pois só com você irá funcionar essa plataforma, por enquanto 😄!\nGere seu histórico escolar a partir do Minha Unisinos, e o utilize aqui para gerar recomendações de estudos personalizadas.",
+      "Olá! Espero que você seja aluno de Ciência da Computação da Unisinos, pois, por enquanto, a plataforma só funciona para você 😄.\nGere seu histórico acadêmico no Minha Unisinos e utilize-o aqui para obter recomendações personalizadas de estudo.",
     success: "Recomendações geradas com sucesso!",
   },
   true: {
     button: "Gerar as recomendações novamente",
     description:
-      "Pode ter ocorrido algum erro de análise de dados ou na leitura do PDF por parte da inteligência artificial. Portanto, gere as recomendações novamente a partir do mesmo histórico escolar, a fim de não houver mais erros.",
+      "É possível que tenha ocorrido um erro na análise de dados ou na leitura do documento pela inteligência artificial durante sua geração em específico, o que pode ter afetado o reconhecimento e a associação de notas e disciplinas. Sinta-se à vontade para gerar novamente com o mesmo histórico escolar, pois, embora o modelo tenha sido treinado para responder corretamente, em alguns casos isolados ele ainda pode apresentar inconsistências.",
     success: "Recomendações geradas novamente com sucesso!",
   },
 };
@@ -44,6 +44,10 @@ export const RecommendationModal = ({
   const { create } = useFiles();
   const { mutate } = useGetRecommendations();
 
+  useEffect(() => {
+    return () => toast.dismiss();
+  }, []);
+
   const texts =
     recommendationsTexts[hasRecommendations as unknown as "true" | "false"];
 
@@ -51,6 +55,13 @@ export const RecommendationModal = ({
     setFile(null);
     setIsLoading(false);
     toast.dismiss(toastLoadingId);
+    setToastLoadingId(undefined);
+  };
+
+  const toastError = () => {
+    toast.error(
+      "Houve um erro ao gerar as recomendações. Tente gerar novamente e, se o erro persistir, contate o desenvolvedor!"
+    );
   };
 
   const handleConfirm = async () => {
@@ -70,16 +81,24 @@ export const RecommendationModal = ({
       mutate(files, {
         onSuccess: (data) => {
           if (data?.recommendations) {
-            const gptResponse = {
+            const coefficient = getCoefficient(data.academic_history);
+            const gptResponse: IGptResponse = {
               ...data,
               lastUpdated: `Dados coletados e analisados em: ${getFormattedCurrentDate()}`,
+              academic_info: [
+                ...data.academic_info,
+                {
+                  title: "Coeficiente de rendimento",
+                  info: coefficient,
+                },
+              ],
             };
             setGptResponse(gptResponse);
             gptResponseDatabase.updateGptResponse({
               userId: user!.id,
               gptResponse,
             });
-            updateUser({ generations: user!.generations + 1 });
+            updateUser({ generations: user!.generations + 1, coefficient });
             handleFinish();
             toast.success(texts.success);
             handleClose();
@@ -89,10 +108,12 @@ export const RecommendationModal = ({
         },
         onError: () => {
           handleFinish();
+          toastError();
         },
       });
     } catch {
       handleFinish();
+      toastError();
     }
   };
 
@@ -114,10 +135,10 @@ export const RecommendationModal = ({
       </Styles.ModalButton>
       <Modal open={isOpen} onClose={handleClose} disableEscapeKeyDown>
         <Styles.ModalCard>
-          <Typography>{texts.description}</Typography>
+          <Typography variant="body2">{texts.description}</Typography>
 
           {file ? (
-            <Typography>{`Boa, você selecionou o arquivo: ${file.name}`}</Typography>
+            <Typography variant="body2">{`Boa, você selecionou o arquivo: ${file.name}`}</Typography>
           ) : (
             <Dropzone setFile={setFile} />
           )}

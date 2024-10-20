@@ -76,6 +76,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
               email: user.email ?? "",
               name: user.displayName ?? "",
               generations: 0,
+              coefficient: 0,
             };
 
             usersDatabase.createUser(newUser);

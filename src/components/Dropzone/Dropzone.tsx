@@ -25,7 +25,7 @@ export const Dropzone = ({ setFile }: IDropzone) => {
   return (
     <Styles.Dropzone {...getRootProps()} style={getOpacity(isDragActive)}>
       <input {...getInputProps()} />
-      <Typography>
+      <Typography variant="body2">
         Arraste aqui seu histórico acadêmico ou clique para selecionar
       </Typography>
     </Styles.Dropzone>

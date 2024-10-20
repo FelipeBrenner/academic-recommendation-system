@@ -3,7 +3,8 @@ export interface IUser {
   avatar?: string;
   email: string;
   name: string;
-  generations:  number
+  generations: number;
+  coefficient: number;
   [key: string]: any;
 }
 
@@ -34,7 +35,7 @@ export interface ISubject {
 
 export interface IAcademicInfo {
   title: string;
-  info: string;
+  info: string | number;
 }
 
 export interface IGptResponse {

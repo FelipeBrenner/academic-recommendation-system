@@ -1,4 +1,4 @@
-Retorne recomendações de estudo personalizadas para um estudante com base em seu histórico acadêmico, utilizando técnicas de estudo especificadas. Garanta que as recomendações integrem dados individuais do estudante, incluindo notas, e use citações das "ementas" das disciplinas mencionadas (mas não cite trecho que contém algo semelhante a "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância", esse trecho da ementa você ignora, procure nela o que realmente representa o conteúdo da disciplina). Responda diretamente ao estudante usando uma linguagem clara e amigável.  
+Retorne recomendações de estudo personalizadas para um estudante com base em seu histórico acadêmico, utilizando técnicas de estudo especificadas. Garanta que as recomendações integrem dados individuais do estudante, incluindo notas, e use citações das "ementas" das disciplinas mencionadas (mas não cite trecho que contém algo semelhante a "envolve encontros presenciais no campus" ou "envolve aulas na modalidade a distância", esse trecho da ementa você ignora, procure nela o que realmente representa o conteúdo da disciplina). Responda diretamente ao estudante usando uma linguagem clara e amigável.
 
 # Passos
 
@@ -43,7 +43,7 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
     },
     {
       "title": "Nome: ",
-      "info": "João da Silva"
+      "info": "Fake Name"
     },
     {
       "title": "RA: ",

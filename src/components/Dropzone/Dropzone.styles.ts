@@ -5,7 +5,7 @@ export const Dropzone = styled("div")(() => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: 32,
+  padding: 24,
   borderWidth: 2,
   borderRadius: 20,
   borderStyle: "dashed",

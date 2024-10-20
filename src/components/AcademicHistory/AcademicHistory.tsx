@@ -44,7 +44,7 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
         </Styles.InfoCard>
       )}
       <Styles.Header>
-        <Typography variant="body2">{`Segue seu histórico acadêmico dado como entrada, juntamente com ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma!\nNesta mesma página você tem um recurso onde pode aplicar a técnica de Pomodoro e, em uma nova página disponibilizada, outro recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
+        <Typography variant="body2">{`Abaixo está o seu histórico acadêmico fornecido como entrada, acompanhado de ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma.\nNesta página, você também encontra uma ferramenta para aplicar a técnica Pomodoro, e em uma nova página, está disponível um recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
       </Styles.Header>
       <Card>
         <Scrollbar>

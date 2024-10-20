@@ -2,7 +2,6 @@ import type { IGptResponse } from "@interfaces";
 import { openai } from "@services";
 import { useMutation } from "@tanstack/react-query";
 import type { TextContentBlock } from "openai/resources/beta/threads/messages.mjs";
-import { toast } from "react-toastify";
 import userContent from "./user.txt?raw";
 
 export const useGetRecommendations = () => {
@@ -32,7 +31,13 @@ export const useGetRecommendations = () => {
           const text =
             (messages.data[0].content[0] as TextContentBlock)?.text.value ?? "";
 
-          if (text.includes("recommendations")) return JSON.parse(text);
+          const hasNoRecognizeAcademicHistory = text.includes("Fake Name");
+
+          if (
+            text.includes("recommendations") &&
+            !hasNoRecognizeAcademicHistory
+          )
+            return JSON.parse(text);
 
           throw new Error(text);
         }
@@ -42,10 +47,6 @@ export const useGetRecommendations = () => {
         }
       } catch (error: any) {
         console.error(error);
-        toast.dismiss();
-        toast.error(
-          "Houve um erro ao gerar as recomendações. Tente gerar novamente e, se o erro persistir, contate o desenvolvedor!"
-        );
       }
 
       return {} as IGptResponse;
