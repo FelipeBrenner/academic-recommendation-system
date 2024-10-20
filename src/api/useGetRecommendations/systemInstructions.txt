@@ -26,7 +26,7 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
     },
     "matriz_de_eisenhower": {
       "titulo": "Matriz de Eisenhower",
-      "descricao": "A disciplina [INSERIR DISCIPLINA] tem uma nota de [INSERIR NOTA], mostrando espaço para priorização através da Matriz de Eisenhower. Essa técnica permitirá você classificar tarefas e focar no que realmente importa [DETALHAMENTO MAIOR SOBRE A TÉCNICA]. Segundo a ementa, [PRINCIPAL CONTEÚDO DA DISCPILINA IDENTIFICADO A PARTIR DE SUA EMENTA], [EXPLICACAO DE COMO A TECNICA PODE SER APLICADA CONFORME O ASSUNTO DA EMENTA]. (EISENHOWER, 1954)",
+      "descricao": "A disciplina [INSERIR DISCIPLINA] tem uma nota de [INSERIR NOTA, CUIDE PARA SER A NOTA EXATAMENTE DA DISCIPLINA MENCIONADA ANTERIORMENTE, E NÃO SE CONFUNDIR COM UMA SEMELHANTE, POR EXEMPLO REDES I E REDES II], mostrando espaço para priorização através da Matriz de Eisenhower. Essa técnica permitirá você classificar tarefas e focar no que realmente importa [DETALHAMENTO MAIOR SOBRE A TÉCNICA]. Segundo a ementa, [PRINCIPAL CONTEÚDO DA DISCPILINA IDENTIFICADO A PARTIR DE SUA EMENTA], [EXPLICACAO DE COMO A TECNICA PODE SER APLICADA CONFORME O ASSUNTO DA EMENTA]. (EISENHOWER, 1954)",
       "subject": "[DISCIPLINA]"
     },
     ...

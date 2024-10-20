@@ -84,7 +84,7 @@ export const RecommendationModal = ({
             const coefficient = getCoefficient(data.academic_history);
             const gptResponse: IGptResponse = {
               ...data,
-              lastUpdated: `Dados coletados e analisados em: ${getFormattedCurrentDate()}`,
+              lastUpdated: `Dados gerados em: ${getFormattedCurrentDate()}`,
               academic_info: [
                 ...data.academic_info,
                 {
