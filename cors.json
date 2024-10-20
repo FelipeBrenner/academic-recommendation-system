@@ -1,6 +1,6 @@
 [
   {
-    "origin": ["https://academic-recommendation-system.vercel.app"],
+    "origin": ["*"],
     "method": ["GET"],
     "maxAgeSeconds": 3600
   }
