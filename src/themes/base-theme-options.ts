@@ -285,6 +285,13 @@ export const baseThemeOptions: ThemeOptions = {
         },
       },
     },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: "transparent",
+        },
+      },
+    },
   },
   direction: "ltr",
   shape: {

@@ -13,5 +13,9 @@ Priorizações vistas em call com a orientadora:
 
 TO DO YET:
 
-[ ] Input de PDF, para o histórico acadêmico
-[ ] Exibir acima da tabela mais dados do aluno que têm também no histórico acadêmico
+[X] Input de PDF, para o histórico acadêmico
+[X] Exibir acima da tabela mais dados do aluno que têm também no histórico acadêmico
+
+[ ] Exibir cadeiras atuais separadamente da tabela do histórico
+[não vai rolar] Melhorar a análise e recomendações de atividades futuras
+[ ] Limitar quantidade de gerações

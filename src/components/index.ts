@@ -12,3 +12,4 @@ export * from "./Scrollbar/Scrollbar";
 export * from "./AcademicHistory/AcademicHistory";
 export * from "./Dropzone/Dropzone";
 export * from "./RecommendationModal/RecommendationModal";
+export * from "./GenerationsCounter/GenerationsCounter";

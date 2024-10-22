@@ -5,6 +5,7 @@ export interface IUser {
   name: string;
   generations: number;
   coefficient: number;
+  permission: "admin" | "user";
   [key: string]: any;
 }
 

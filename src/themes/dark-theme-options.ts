@@ -160,13 +160,6 @@ export const darkThemeOptions: ThemeOptions = {
         },
       },
     },
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          backgroundColor: "transparent",
-        },
-      },
-    },
   },
   palette: {
     action: {

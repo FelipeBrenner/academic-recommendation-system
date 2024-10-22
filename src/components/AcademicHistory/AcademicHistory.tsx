@@ -24,8 +24,12 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
   } = gptResponse || {};
 
   const recommendationsArray = Object.values<IRecommendation>(recommendations);
-  const recommendationsLength =
-    recommendationsArray.length > 2 ? recommendationsArray.length - 2 : 0;
+  const recommendationsLength = academic_history.reduce((acc, subject) => {
+    return (
+      acc +
+      (recommendationsArray.some((r) => r.subject === subject.name) ? 1 : 0)
+    );
+  }, 0);
 
   if (academic_history.length === 0) return null;
 

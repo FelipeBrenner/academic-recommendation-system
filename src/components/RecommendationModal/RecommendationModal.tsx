@@ -133,7 +133,7 @@ export const RecommendationModal = ({
       <Styles.ModalButton variant="outlined" onClick={handleOpen}>
         {texts.button}
       </Styles.ModalButton>
-      <Modal open={isOpen} onClose={handleClose} disableEscapeKeyDown>
+      <Modal open={isOpen} onClose={handleClose}>
         <Styles.ModalCard>
           <Typography variant="body2">{texts.description}</Typography>
 

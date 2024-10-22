@@ -60,3 +60,5 @@ export const COLORS = [
   "#A1887F",
   "#90A4AE",
 ];
+
+export const MAX_GENERATIONS = 6;
