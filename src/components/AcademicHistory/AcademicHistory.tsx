@@ -13,9 +13,10 @@ import { RecommendationTooltip, Scrollbar } from "@components";
 
 interface IAcademicHistory {
   gptResponse: IGptResponse | null;
+  isOwner?: boolean;
 }
 
-export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
+export const AcademicHistory = ({ gptResponse, isOwner }: IAcademicHistory) => {
   const {
     recommendations = {},
     academic_history = [],
@@ -37,19 +38,32 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
     <Styles.Wrapper>
       {academic_info.length > 0 && (
         <Styles.InfoCard>
-          {academic_info.map(({ title, info }) => (
-            <Styles.InfoCardRow key={title}>
-              <Typography variant="body2" fontWeight="bold">
-                {title}
-              </Typography>
-              <Typography variant="body2">{info}</Typography>
-            </Styles.InfoCardRow>
-          ))}
+          {academic_info
+            .filter(({ title }) => {
+              if (isOwner) return true;
+
+              return [
+                "Nome:",
+                "Forma de Ingresso:",
+                "Resultado final:",
+                "Média Global:",
+              ].includes(title.trim());
+            })
+            .map(({ title, info }) => (
+              <Styles.InfoCardRow key={title}>
+                <Typography variant="body2" fontWeight="bold">
+                  {title}
+                </Typography>
+                <Typography variant="body2">{info}</Typography>
+              </Styles.InfoCardRow>
+            ))}
         </Styles.InfoCard>
       )}
-      <Styles.Header>
-        <Typography variant="body2">{`Abaixo está o seu histórico acadêmico fornecido como entrada, acompanhado de ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma.\nNesta página, você também encontra uma ferramenta para aplicar a técnica Pomodoro, e em uma nova página, está disponível um recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
-      </Styles.Header>
+      {isOwner && (
+        <Styles.Header>
+          <Typography variant="body2">{`Abaixo está o seu histórico acadêmico fornecido como entrada, acompanhado de ${recommendationsLength} recomendações de técnicas de estudo identificadas pela plataforma.\nNesta página, você também encontra uma ferramenta para aplicar a técnica Pomodoro, e em uma nova página, está disponível um recurso para aplicar a técnica de Estabelecimento de Metas.`}</Typography>
+        </Styles.Header>
+      )}
       <Card>
         <Scrollbar>
           <Table>
@@ -83,7 +97,11 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
                     </Styles.TableCellCentered>
                     <Styles.TableCellCentered>
                       {subject.grade}
-                      <RecommendationTooltip recommendation={recommendation} />
+                      {isOwner && (
+                        <RecommendationTooltip
+                          recommendation={recommendation}
+                        />
+                      )}
                     </Styles.TableCellCentered>
                   </TableRow>
                 );
@@ -92,11 +110,13 @@ export const AcademicHistory = ({ gptResponse }: IAcademicHistory) => {
           </Table>
         </Scrollbar>
       </Card>
-      <Styles.Footer>
-        <Typography variant="caption" color="gray">
-          {lastUpdated}
-        </Typography>
-      </Styles.Footer>
+      {isOwner && (
+        <Styles.Footer>
+          <Typography variant="caption" color="gray">
+            {lastUpdated}
+          </Typography>
+        </Styles.Footer>
+      )}
     </Styles.Wrapper>
   );
 };

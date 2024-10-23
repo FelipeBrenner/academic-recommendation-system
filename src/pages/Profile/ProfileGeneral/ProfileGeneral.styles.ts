@@ -4,7 +4,7 @@ import {
   Card as MuiCard,
   TextField,
   styled,
-  Checkbox as MuiCheckbox,
+  FormControlLabel,
 } from "@mui/material";
 
 export const Card = styled(MuiCard)(({ theme }) => ({
@@ -38,8 +38,8 @@ export const ButtonContainer = styled(MuiBox)(({ theme }) => ({
   marginTop: theme.spacing(3),
 }));
 
-export const Checkbox = styled(MuiCheckbox)(() => ({
-  height: 24,
+export const CheckboxControl = styled(FormControlLabel)(() => ({
+  marginTop: -9,
 }));
 
 export const TooltipCard = styled(MuiCard)(({ theme }) => ({

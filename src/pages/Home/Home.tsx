@@ -26,7 +26,7 @@ export const Home = () => {
               overflow: "auto",
             }}
           >
-            <AcademicHistory gptResponse={gptResponse} />
+            <AcademicHistory gptResponse={gptResponse} isOwner />
           </Grid>
           <Grid item sm={12} md="auto">
             <Pomodoro

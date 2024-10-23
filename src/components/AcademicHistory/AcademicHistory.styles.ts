@@ -1,6 +1,10 @@
 import { Card, styled, TableCell, Typography } from "@mui/material";
 
-export const Wrapper = styled("div")(() => ({}));
+export const Wrapper = styled("div")(() => ({
+  ".simplebar-content:before, .simplebar-content:after": {
+    display: "none",
+  },
+}));
 
 export const Header = styled("div")(() => ({
   display: "flex",

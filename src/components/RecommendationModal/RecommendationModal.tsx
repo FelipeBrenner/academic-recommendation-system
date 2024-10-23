@@ -88,7 +88,7 @@ export const RecommendationModal = ({
               academic_info: [
                 ...data.academic_info,
                 {
-                  title: "Média Global",
+                  title: "Média Global:",
                   info: coefficient,
                 },
               ],

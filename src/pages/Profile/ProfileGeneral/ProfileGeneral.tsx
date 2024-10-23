@@ -3,7 +3,7 @@ import { LoadingButton } from "@mui/lab";
 import {
   Button,
   CardContent,
-  FormControlLabel,
+  Checkbox,
   Grid,
   TextField,
   Tooltip,
@@ -135,10 +135,10 @@ export const ProfileGeneral = () => {
                         </Styles.TooltipCard>
                       }
                     >
-                      <FormControlLabel
+                      <Styles.CheckboxControl
                         label="Habilitar compartilhamento de dados e acesso aos dos outros usuários"
                         control={
-                          <Styles.Checkbox
+                          <Checkbox
                             checked={allowShareData}
                             onChange={(event) =>
                               setAllowShareData(event.target.checked)
