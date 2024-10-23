@@ -1,5 +1,12 @@
 import { type Dispatch, useEffect, useState } from "react";
-import { Modal, Typography } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  Modal,
+  Typography,
+} from "@mui/material";
 import * as Styles from "./RecommendationModal.styles";
 import { Dropzone } from "@components";
 import { useFiles, useGetRecommendations } from "@api";
@@ -36,7 +43,8 @@ export const RecommendationModal = ({
   hasRecommendations,
   setGptResponse,
 }: IRecommendationModal) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenDialog, setIsOpenDialog] = useState(false);
   const [file, setFile] = useState<FileWithPath | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [toastLoadingId, setToastLoadingId] = useState<Id>();
@@ -98,10 +106,13 @@ export const RecommendationModal = ({
               userId: user!.id,
               gptResponse,
             });
+            if (user?.generations === 0) {
+              setTimeout(handleOpenDialog, 2000);
+            }
             updateUser({ generations: user!.generations + 1, coefficient });
             handleFinish();
             toast.success(texts.success);
-            handleClose();
+            handleCloseModal();
           } else {
             throw new Error();
           }
@@ -117,23 +128,31 @@ export const RecommendationModal = ({
     }
   };
 
-  const handleOpen = () => {
-    setIsOpen(true);
+  const handleOpenModal = () => {
+    setIsOpenModal(true);
   };
 
-  const handleClose = () => {
+  const handleCloseModal = () => {
     if (!isLoading) {
       setFile(null);
     }
-    setIsOpen(false);
+    setIsOpenModal(false);
+  };
+
+  const handleOpenDialog = () => {
+    setIsOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setIsOpenDialog(false);
   };
 
   return (
     <>
-      <Styles.ModalButton variant="outlined" onClick={handleOpen}>
+      <Styles.ModalButton variant="outlined" onClick={handleOpenModal}>
         {texts.button}
       </Styles.ModalButton>
-      <Modal open={isOpen} onClose={handleClose}>
+      <Modal open={isOpenModal} onClose={handleCloseModal}>
         <Styles.ModalCard>
           <Typography variant="body2">{texts.description}</Typography>
 
@@ -152,6 +171,23 @@ export const RecommendationModal = ({
           </Styles.ConfirmButton>
         </Styles.ModalCard>
       </Modal>
+      <Dialog open={isOpenDialog}>
+        <DialogContent>
+          <Typography variant="body2">
+            Agora você também pode habilitar, no seu perfil, o recurso de
+            compartilhamento de dados com outros usuários. Ao ativá-lo, você
+            poderá visualizar os desempenhos de colegas em disciplinas de
+            interesse, além de compartilhar os seus. Isso irá facilitar
+            encontrar pessoas com quem você tenha afinidade ou que possam te
+            ajudar, promovendo a troca de conhecimento e a colaboração.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button variant="outlined" onClick={handleCloseDialog}>
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 };
