@@ -3,8 +3,10 @@ import { LoadingButton } from "@mui/lab";
 import {
   Button,
   CardContent,
+  FormControlLabel,
   Grid,
   TextField,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { storage } from "@services";
@@ -18,9 +20,12 @@ export const ProfileGeneral = () => {
   const { user, updateUser } = useAuth();
   const [avatar, setAvatar] = useState(user?.avatar);
   const [name, setName] = useState(user?.name);
+  const [allowShareData, setAllowShareData] = useState(user?.allowShareData);
   const [isLoadingChangeAvatar, setIsLoadingChangeAvatar] = useState(false);
   const [isLoadingSave, setIsLoadingSave] = useState(false);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const enableShareDataCheckbox = !!user?.generations;
 
   const handleChangeAvatar = async (event: ChangeEvent<HTMLInputElement>) => {
     const [file] = event.target.files ?? [];
@@ -46,13 +51,14 @@ export const ProfileGeneral = () => {
     if (user) {
       setAvatar(user.avatar);
       setName(user.name);
+      setAllowShareData(user.allowShareData);
     }
   };
 
   const handleSave = async () => {
     try {
       setIsLoadingSave(true);
-      updateUser({ avatar, name }).then(() => {
+      updateUser({ avatar, name, allowShareData }).then(() => {
         toast.success("Usuário atualizado com sucesso!");
         setIsLoadingSave(false);
       });
@@ -63,7 +69,10 @@ export const ProfileGeneral = () => {
     }
   };
 
-  const hasChanged = avatar !== user?.avatar || name !== user?.name;
+  const hasChanged =
+    avatar !== user?.avatar ||
+    name !== user?.name ||
+    allowShareData !== user?.allowShareData;
 
   return (
     <>
@@ -109,6 +118,37 @@ export const ProfileGeneral = () => {
                     size="small"
                   />
                 </Grid>
+                {enableShareDataCheckbox && (
+                  <Grid item md={12} xs={12}>
+                    <Tooltip
+                      title={
+                        <Styles.TooltipCard>
+                          Ao habilitar este recurso, você autoriza o
+                          compartilhamento do seu histórico acadêmico, incluindo
+                          notas, forma de ingresso e média global, com outros
+                          usuários. Você passa a ter também a visibilidade
+                          destes dados dos outros usuários. Dessa forma, você
+                          pode se motivar a estudar e encontrar usuários com
+                          habilidades e desempenhos em disciplinas que você tem
+                          afinidade ou que precisa de ajuda, incentivando a
+                          troca de conhecimento e colaboração.
+                        </Styles.TooltipCard>
+                      }
+                    >
+                      <FormControlLabel
+                        label="Habilitar compartilhamento de dados e acesso aos dos outros usuários"
+                        control={
+                          <Styles.Checkbox
+                            checked={allowShareData}
+                            onChange={(event) =>
+                              setAllowShareData(event.target.checked)
+                            }
+                          />
+                        }
+                      />
+                    </Tooltip>
+                  </Grid>
+                )}
               </Grid>
             </Grid>
           </Grid>

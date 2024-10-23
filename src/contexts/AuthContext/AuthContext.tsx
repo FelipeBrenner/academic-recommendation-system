@@ -78,6 +78,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
               generations: 0,
               coefficient: 0,
               permission: "user",
+              allowShareData: false,
             };
 
             usersDatabase.createUser(newUser);

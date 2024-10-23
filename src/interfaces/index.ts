@@ -6,6 +6,7 @@ export interface IUser {
   generations: number;
   coefficient: number;
   permission: "admin" | "user";
+  allowShareData: boolean;
   [key: string]: any;
 }
 
