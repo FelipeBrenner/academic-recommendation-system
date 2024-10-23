@@ -18,4 +18,4 @@ TO DO YET:
 
 [ ] Exibir cadeiras atuais separadamente da tabela do histórico
 [não vai rolar] Melhorar a análise e recomendações de atividades futuras
-[ ] Limitar quantidade de gerações
+[X] Limitar quantidade de gerações

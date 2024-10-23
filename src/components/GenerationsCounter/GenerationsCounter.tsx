@@ -4,7 +4,7 @@ import { useAuth } from "@contexts";
 import { MAX_GENERATIONS } from "@constants";
 
 const tooltipTitles = {
-  over: "Seu limite de gerações acabou. Caso precise de mais, entre em contato com o desenvolvedor!",
+  over: "Seu limite de gerações acabou. Caso queira mais, entre em contato com o desenvolvedor!",
   notOver:
     "Se seu limite de gerações acabar e você precisar de mais, entre em contato com o desenvolvedor!",
 };

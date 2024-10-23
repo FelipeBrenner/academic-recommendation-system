@@ -15,7 +15,7 @@ export const ThemeButton = () => {
   };
 
   return (
-    <Tooltip title="Tema">
+    <Tooltip title={<Styles.Card>Tema</Styles.Card>}>
       <Styles.IconButton onClick={handleChange}>
         {settings.theme === "dark" ? (
           <DarkModeIcon fontSize="small" />
