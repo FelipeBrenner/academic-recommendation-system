@@ -23,7 +23,7 @@ export const Login = () => {
       <Styles.LoginCard elevation={16}>
         <Logo />
         <Typography variant="h4">
-          Sistema de Recomendação de Plano de Estudos Acadêmico
+          Sistema de Recomendação de Planos de Estudo Acadêmico
         </Typography>
         <Typography variant="body2" color="textSecondary">
           Entre com o método de login de sua preferência
