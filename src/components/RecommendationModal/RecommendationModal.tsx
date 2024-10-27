@@ -23,7 +23,7 @@ const recommendationsTexts = {
   false: {
     button: "Gerar recomendações",
     description:
-      "Olá! Espero que você seja aluno de Ciência da Computação da Unisinos, pois, por enquanto, a plataforma só funciona para você 😄.\nGere seu histórico acadêmico no Minha Unisinos e utilize-o aqui para obter recomendações personalizadas de estudo.",
+      "Olá! Espero que você seja aluno de Ciência da Computação da Unisinos, pois, por enquanto, a plataforma só funciona para você 😄.\nGere seu histórico acadêmico no Minha Unisinos e utilize-o aqui para obter recomendações personalizadas de estudo.\nOnde gerar: https://www.unisinos.br/minha-unisinos/aluno/ -> Autoatendimento -> Emissão de documentos -> Secretaria -> Histórico Escolar por Curso - doc. para simples conferência",
     success: "Recomendações geradas com sucesso!",
   },
   true: {
