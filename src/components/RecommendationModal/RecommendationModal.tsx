@@ -75,7 +75,9 @@ export const RecommendationModal = ({
   const handleConfirm = async () => {
     setIsLoading(true);
     setToastLoadingId(
-      toast.loading("Boa, estamos gerando suas recomendações, aguarde!")
+      toast.loading(
+        "Boa, estamos analisando seu arquivo e gerando suas recomendações. Geralmente leva um pouco mais de 1 minuto, aguarde!"
+      )
     );
     try {
       const fileRef = ref(storage, `history-${file!.name}`);
