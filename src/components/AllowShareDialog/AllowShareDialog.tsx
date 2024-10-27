@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogActions, DialogContent } from "@mui/material";
+import { Dialog, DialogActions, DialogContent } from "@mui/material";
 import { AllowShareCheckbox } from "@components";
 import { useState } from "react";
 import * as Styles from "./AllowShareDialog.styles";
