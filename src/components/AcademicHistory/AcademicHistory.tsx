@@ -110,13 +110,11 @@ export const AcademicHistory = ({ gptResponse, isOwner }: IAcademicHistory) => {
           </Table>
         </Scrollbar>
       </Card>
-      {isOwner && (
-        <Styles.Footer>
-          <Typography variant="caption" color="gray">
-            {lastUpdated}
-          </Typography>
-        </Styles.Footer>
-      )}
+      <Styles.Footer>
+        <Typography variant="caption" color="gray">
+          {lastUpdated}
+        </Typography>
+      </Styles.Footer>
     </Styles.Wrapper>
   );
 };
