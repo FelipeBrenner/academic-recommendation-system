@@ -3,10 +3,8 @@ import { LoadingButton } from "@mui/lab";
 import {
   Button,
   CardContent,
-  Checkbox,
   Grid,
   TextField,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import { storage } from "@services";
@@ -15,6 +13,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useRef, useState, type ChangeEvent } from "react";
 import { toast } from "react-toastify";
 import * as Styles from "./ProfileGeneral.styles";
+import { AllowShareCheckbox } from "@components";
 
 export const ProfileGeneral = () => {
   const { user, updateUser } = useAuth();
@@ -120,33 +119,10 @@ export const ProfileGeneral = () => {
                 </Grid>
                 {enableShareDataCheckbox && (
                   <Grid item md={12} xs={12}>
-                    <Tooltip
-                      title={
-                        <Styles.TooltipCard>
-                          Ao habilitar este recurso, você autoriza o
-                          compartilhamento do seu histórico acadêmico, incluindo
-                          notas, forma de ingresso e média global, com outros
-                          usuários. Você passa a ter também a visibilidade
-                          destes dados dos outros usuários. Dessa forma, você
-                          pode se motivar a estudar e encontrar usuários com
-                          habilidades e desempenhos em disciplinas que você tem
-                          afinidade ou que precisa de ajuda, incentivando a
-                          troca de conhecimento e colaboração.
-                        </Styles.TooltipCard>
-                      }
-                    >
-                      <Styles.CheckboxControl
-                        label="Habilitar compartilhamento de dados e acesso aos dos outros usuários"
-                        control={
-                          <Checkbox
-                            checked={allowShareData}
-                            onChange={(event) =>
-                              setAllowShareData(event.target.checked)
-                            }
-                          />
-                        }
-                      />
-                    </Tooltip>
+                    <AllowShareCheckbox
+                      checked={allowShareData}
+                      onChange={setAllowShareData}
+                    />
                   </Grid>
                 )}
               </Grid>

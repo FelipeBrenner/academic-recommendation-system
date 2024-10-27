@@ -1,14 +1,7 @@
 import { type Dispatch, useEffect, useState } from "react";
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  Modal,
-  Typography,
-} from "@mui/material";
+import { Modal, Typography } from "@mui/material";
 import * as Styles from "./RecommendationModal.styles";
-import { Dropzone } from "@components";
+import { AllowShareDialog, Dropzone } from "@components";
 import { useFiles, useGetRecommendations } from "@api";
 import { type Id, toast } from "react-toastify";
 import { getCoefficient, getFormattedCurrentDate } from "@utils";
@@ -23,7 +16,7 @@ const recommendationsTexts = {
   false: {
     button: "Gerar recomendações",
     description:
-      "Olá! Espero que você seja aluno de Ciência da Computação da Unisinos, pois, por enquanto, a plataforma só funciona para você 😄.\nGere seu histórico acadêmico no Minha Unisinos e utilize-o aqui para obter recomendações personalizadas de estudo.\nOnde gerar: https://www.unisinos.br/minha-unisinos/aluno/ -> Autoatendimento -> Emissão de documentos -> Secretaria -> Histórico Escolar por Curso - doc. para simples conferência",
+      "Olá! Espero que você seja aluno de Ciência da Computação da Unisinos, pois, por enquanto, a plataforma só funciona para você 😄.\nGere seu histórico acadêmico no Minha Unisinos e utilize-o aqui para obter recomendações personalizadas de estudo.\nOnde gerar: https://www.unisinos.br/minha-unisinos/aluno/ -> Autoatendimento -> Emissão de documentos -> Secretaria -> Histórico Escolar por Curso - doc. para simples conferência.",
     success: "Recomendações geradas com sucesso!",
   },
   true: {
@@ -76,7 +69,7 @@ export const RecommendationModal = ({
     setIsLoading(true);
     setToastLoadingId(
       toast.loading(
-        "Boa, estamos analisando seu arquivo e gerando suas recomendações. Geralmente leva um pouco mais de 1 minuto, aguarde!"
+        "Boa! Estamos analisando seu arquivo e gerando suas recomendações. Geralmente, isso leva um pouco mais de 1 minuto. Por favor, aguarde!"
       )
     );
     try {
@@ -159,7 +152,7 @@ export const RecommendationModal = ({
           <Typography variant="body2">{texts.description}</Typography>
 
           {file ? (
-            <Typography variant="body2">{`Boa, você selecionou o arquivo: ${file.name}`}</Typography>
+            <Typography variant="body2">{`Boa! Você selecionou o arquivo: ${file.name}.`}</Typography>
           ) : (
             <Dropzone setFile={setFile} />
           )}
@@ -173,23 +166,10 @@ export const RecommendationModal = ({
           </Styles.ConfirmButton>
         </Styles.ModalCard>
       </Modal>
-      <Dialog open={isOpenDialog}>
-        <DialogContent>
-          <Typography variant="body2">
-            Agora você também pode habilitar, no seu perfil, o recurso de
-            compartilhamento de dados com outros usuários. Ao ativá-lo, você
-            poderá visualizar os desempenhos de colegas em disciplinas de
-            interesse, além de compartilhar os seus. Isso irá facilitar
-            encontrar pessoas com quem você tenha afinidade ou que possam te
-            ajudar, promovendo a troca de conhecimento e a colaboração.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button variant="outlined" onClick={handleCloseDialog}>
-            Ok
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <AllowShareDialog
+        isOpenDialog={isOpenDialog}
+        handleCloseDialog={handleCloseDialog}
+      />
     </>
   );
 };

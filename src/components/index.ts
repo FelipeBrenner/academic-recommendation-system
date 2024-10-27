@@ -13,3 +13,5 @@ export * from "./AcademicHistory/AcademicHistory";
 export * from "./Dropzone/Dropzone";
 export * from "./RecommendationModal/RecommendationModal";
 export * from "./GenerationsCounter/GenerationsCounter";
+export * from "./AllowShareCheckbox/AllowShareCheckbox";
+export * from "./AllowShareDialog/AllowShareDialog";
