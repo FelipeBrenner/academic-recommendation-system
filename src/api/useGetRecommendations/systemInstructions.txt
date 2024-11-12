@@ -64,7 +64,7 @@ A saída deve ser um JSON estruturado, devendo seguir o modelo abaixo, conforme 
   ],
   "academic_history": [
     {
-      "name": "[NOME DA DISCIPLINA,]",
+      "name": "[NOME DA DISCIPLINA]",
       "grade": [NOTA],
       "semester": [PERIODO EM QUE REALIZOU]
     }
